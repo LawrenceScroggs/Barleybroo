@@ -1,11 +1,11 @@
-.home,.rate {
+.home,.rate,.sign {
   font-family: 'Roboto';
   color:white !important;
   float: right;
-  padding-left: 200px;
 }
 .main-logo {
-  float: left;
+  justify-content: flex-end;
+  float: right;
 }
 .nav-bar {
   background-color: black;

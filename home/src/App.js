@@ -1,27 +1,26 @@
 import React from 'react';
 import './App.css';
-import * as RBS from "react-bootstrap";
+import * as RBS from 'react-bootstrap';
 
-function App() {
+function App(){
   return (
     <div className="App">
-        <RBS.Navbar bg="dark">
-          <RBS.Navbar.Brand href="/">
+      <RBS.Navbar bg="dark">
+        <RBS.Navbar.Brand href="/" className="justify-content-left">
           <img
-            src="images/BB1.png"
-            width="100"
-            height="125"
+            src="images/BB2.png"
+            width="200"
+            height="100"
             className="d-inline-block align-top"
             alt="main-logo"
           />
-          </RBS.Navbar.Brand>
-          <RBS.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <RBS.Navbar.Collapse id="responsive-navbar-nav">
-              <RBS.Nav className="justify-content-end">
+        </RBS.Navbar.Brand>
+          <RBS.Navbar.Toggle />
+              <RBS.Navbar.Collapse className="justify-content-end">
                 <RBS.Nav.Link href="/home" className="home">HOME</RBS.Nav.Link>
                 <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
-              </RBS.Nav>
-          </RBS.Navbar.Collapse>
+                <RBS.Nav.Link href="/sign-in" className="sign">SIGN-IN</RBS.Nav.Link>
+              </RBS.Navbar.Collapse>
         </RBS.Navbar>
 
     </div>
