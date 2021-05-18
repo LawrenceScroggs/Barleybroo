@@ -1,30 +1,18 @@
 import React from 'react';
 import './App.css';
-import * as RBS from 'react-bootstrap';
+import { navbar } from './components/navbar';
 
-function App(){
+export class App extends React.Component{
+  render(){
   return (
     <div className="App">
-      <RBS.Navbar bg="dark">
-        <RBS.Navbar.Brand href="/" className="justify-content-left">
-          <img
-            src="images/BB2.png"
-            width="200"
-            height="100"
-            className="d-inline-block align-top"
-            alt="main-logo"
-          />
-        </RBS.Navbar.Brand>
-          <RBS.Navbar.Toggle />
-              <RBS.Navbar.Collapse className="justify-content-end">
-                <RBS.Nav.Link href="/home" className="home">HOME</RBS.Nav.Link>
-                <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
-                <RBS.Nav.Link href="/sign-in" className="sign">SIGN-IN</RBS.Nav.Link>
-              </RBS.Navbar.Collapse>
-        </RBS.Navbar>
+      <h1>
+        <navbar></navbar>
+      </h1>
+      <h1>hello</h1>
 
     </div>
   );
 }
+}
 
-export default App;
