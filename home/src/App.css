@@ -1,18 +1,3 @@
-.home,.rate,.sign {
-  font-family: 'Roboto';
-  color:white !important;
-  float: right;
+.a-body{
+  background-color: yellow !important;
 }
-.main-logo {
-  justify-content: flex-end;
-  float: right;
-}
-.nav-bar {
-  background-color: black;
-  float: right;
-}
-.hold-logo {
-  float: right;
-}
-
-

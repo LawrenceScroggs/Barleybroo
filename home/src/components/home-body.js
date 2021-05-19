@@ -6,12 +6,12 @@ import './home-body.css';
 export class home_body extends React.Component{
     render(){
         return(
-            <RBS.Container className="cont-b">
+            <RBS.Container className="cont-b" fluid>
                 <RBS.Row className="back-ground">
                     <RBS.Col className="col-b">
-                        <RBS.Card style={{ width: '20rem' }}>
-                            <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" />
-                                <RBS.Card.Body>
+                        <RBS.Card style={{ width: '40rem' }} bg="dark" text="white" >
+                            <RBS.Card.Img style={{height: '25rem', width: '40rem'}} variant="top" src="./images/bes_god.jpeg" />
+                                <RBS.Card.Body style={{width:'40rem'}}>
                                     <RBS.Card.Text>
                                         Bes (/ˈbɛs/; also spelled as Bisu), together with his feminine counterpart Beset,
                                         is an ancient Egyptian deity worshipped as a protector of households and, in 
@@ -26,9 +26,12 @@ export class home_body extends React.Component{
                                 </RBS.Card.Body>
                         </RBS.Card>
                     </RBS.Col>
-                    <RBS.Col>
-                        insert sign-in
-
+                    <RBS.Col className="mp-20 text-center">
+                        <div className="mx-auto">
+                            <RBS.Button className="mx-auto" href="/Rate" variant="primary" size="lg">
+                                FIND-BEER
+                            </RBS.Button>{' '}
+                        </div>
                     </RBS.Col>
                 </RBS.Row>
             </RBS.Container>
