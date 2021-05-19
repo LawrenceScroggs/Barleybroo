@@ -6,9 +6,9 @@ import './home-body.css';
 export class home_body extends React.Component{
     render(){
         return(
-            <RBS.Container className="cont-b" fluid>
-                <RBS.Row className="back-ground">
-                    <RBS.Col className="col-b">
+            <RBS.Container fluid>
+                <RBS.Row className="back-ground" style={{height: '100%'}}>
+                    <RBS.Col className="col-b" style={{height: "100%" }}>
                         <RBS.Card style={{ width: '40rem' }} bg="dark" text="white" >
                             <RBS.Card.Img style={{height: '25rem', width: '40rem'}} variant="top" src="./images/bes_god.jpeg" />
                                 <RBS.Card.Body style={{width:'40rem'}}>

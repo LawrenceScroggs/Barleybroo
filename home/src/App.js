@@ -8,12 +8,10 @@ export class App extends React.Component{
     let nav = new navbar();
     let home = new home_body();
   return (
-    <body className="a-body">
-    <div className="App" background-color="yellow">
+    <body className="App">
       {nav.render()}
       {home.render()}
 
-    </div>
     </body>
   );
 }
