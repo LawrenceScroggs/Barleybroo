@@ -21,6 +21,7 @@ export class navbar extends React.Component{
                   <RBS.Navbar.Collapse className="justify-content-end">
                     <RBS.Nav.Link href="/home" className="home">HOME</RBS.Nav.Link>
                     <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
+                    <RBS.Nav.Link href="/my-map" className="my-map">MY-MAP</RBS.Nav.Link>
                     <RBS.Nav.Link href="/sign-in" className="sign">SIGN-IN</RBS.Nav.Link>
                   </RBS.Navbar.Collapse>
             </RBS.Navbar>
