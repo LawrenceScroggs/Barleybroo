@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { navbar } from './components/navbar';
 import { home_body } from './components/home-body';
-import { signin } from './components/sign-in';
+import { mymap } from './components/my-map';
 
 export class App extends React.Component{
   render(){
@@ -15,7 +15,7 @@ export class App extends React.Component{
       <Switch>
         <Route path="/" component={ home_body } exact/>
         <Route path="/home" component={ home_body } exact/>
-        <Route path="/sign-in" component={ signin } exact/>
+        <Route path="/my-map" component={ mymap } exact/>
       </Switch>
 
     </body>

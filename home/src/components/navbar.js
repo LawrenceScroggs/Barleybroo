@@ -7,7 +7,7 @@ export class navbar extends React.Component{
 
     render(){
         return(
-            <RBS.Navbar bg="dark">
+          <RBS.Navbar bg="dark">
             <RBS.Navbar.Brand href="/" className="justify-content-left">
               <img
                 src="images/BB2.png"
@@ -22,8 +22,37 @@ export class navbar extends React.Component{
                     <RBS.Nav.Link href="/home" className="home">HOME</RBS.Nav.Link>
                     <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
                     <RBS.Nav.Link href="/my-map" className="my-map">MY-MAP</RBS.Nav.Link>
-                    <RBS.Nav.Link href="/sign-in" className="sign">SIGN-IN</RBS.Nav.Link>
                   </RBS.Navbar.Collapse>
+                  <RBS.Accordion bg="dark">
+                    <RBS.Card bg="dark">
+                      <RBS.Card.Header>
+                        <RBS.Accordion.Toggle as="Button" variant="link" eventKey="0">
+                          SIGN-IN
+                        </RBS.Accordion.Toggle>
+                      </RBS.Card.Header>
+                      <RBS.Accordion.Collapse eventKey="0">
+                        <RBS.Card.Body>
+                          <RBS.Form>
+                            <RBS.Form.Group controlId="formBasicEmail">
+                              <RBS.Form.Label>Email address</RBS.Form.Label>
+                                <RBS.Form.Control type="email" placeholder="Enter email" />
+                                    <RBS.Form.Text className="text-muted">
+                                      We'll never share your email with anyone else.
+                                    </RBS.Form.Text>
+                            </RBS.Form.Group>
+
+                            <RBS.Form.Group controlId="formBasicPassword">
+                              <RBS.Form.Label>Password</RBS.Form.Label>
+                                <RBS.Form.Control type="password" placeholder="Password" />
+                            </RBS.Form.Group>
+                            <RBS.Button variant="primary" type="submit">
+                              Submit
+                            </RBS.Button>
+                          </RBS.Form>
+                        </RBS.Card.Body>
+                      </RBS.Accordion.Collapse>
+                    </RBS.Card>
+                  </RBS.Accordion>.
             </RBS.Navbar>
         );
     }

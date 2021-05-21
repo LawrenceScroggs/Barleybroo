@@ -30,12 +30,14 @@ export class home_body extends React.Component{
                     </RBS.Col>
                     <RBS.Col className="mp-20">
                         <div class="home-butt">
-                        <RBS.Card class="home-form">
+                        <RBS.Card border="dark" style={{width: "40rem" }} class="home-form">
                         <RBS.Form>
                             <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicEmail">
                                 <RBS.Form.Label>Email address</RBS.Form.Label>
-                                    <RBS.Form.Control type="email" placeholder="Enter email" />
+                                  <div class="email1">
+                                    <RBS.Form.Control class="email1" type="email" placeholder="Enter email" />
+                                  </div>
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicEmail-2">
                                 <RBS.Form.Label>Verify Email address</RBS.Form.Label>

@@ -13,7 +13,8 @@
     background-color: yellow !important;
 }
 .home-butt{
-    padding-top:20%
+    padding-top:20%;
+    align-content: left; 
 }
 .home-form{
     background-color: whitesmoke;
@@ -25,4 +26,11 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 50%
+}
+.email1{
+    margin-left: 10% !important;
+    padding-right: 10%;
+}
+.Sign-up{
+    align-self: left;
 }
