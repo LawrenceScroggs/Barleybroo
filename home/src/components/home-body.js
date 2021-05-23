@@ -7,9 +7,9 @@ export class home_body extends React.Component{
     render(){
         return(
             <RBS.Container fluid>
-                <RBS.Row className="back-ground" style={{height: '100%'}}>
-                    <RBS.Col className="mp-20 text-center">
-                        <div class="img-hold">
+                <RBS.Row className="back-ground" >
+                    <RBS.Col>
+                      <div class="img-hold">
                         <RBS.Card class="bes" bg="dark" text="white" >
                             <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" />
                                 <RBS.Card.Body >
@@ -26,12 +26,12 @@ export class home_body extends React.Component{
                                     </RBS.Card.Text>
                                 </RBS.Card.Body>
                         </RBS.Card>
-                                </div>
+                      </div>
                     </RBS.Col>
                     <RBS.Col className="mp-20">
                         <div class="home-butt">
-                        <RBS.Card border="dark" style={{width: "40rem" }} class="home-form">
-                        <RBS.Form>
+                        <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
+                        <RBS.Form class="signform">
                             <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicEmail">
                                 <RBS.Form.Label>Email address</RBS.Form.Label>
@@ -41,7 +41,9 @@ export class home_body extends React.Component{
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicEmail-2">
                                 <RBS.Form.Label>Verify Email address</RBS.Form.Label>
+                                  <div class="email2">
                                     <RBS.Form.Control type="email" placeholder="Enter email" />
+                                  </div>
                                         <RBS.Form.Text className="text-muted">
                                             We'll never share your email with anyone else.
                                         </RBS.Form.Text>
@@ -49,14 +51,16 @@ export class home_body extends React.Component{
 
                             <RBS.Form.Group controlId="formBasicPassword">
                                 <RBS.Form.Label>Password</RBS.Form.Label>
+                                  <div class="pass">
                                     <RBS.Form.Control type="password" placeholder="Password" />
+                                  </div>
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="already-user">
                                 <RBS.Form.Text className="text-muted" href="/sign-in/">
                                     Already a user Click Here
                                 </RBS.Form.Text>
                             </RBS.Form.Group>
-                            <RBS.Button variant="primary" type="submit">
+                            <RBS.Button class="butt" variant="primary" type="submit">
                                 Submit
                             </RBS.Button>
                         </RBS.Form>

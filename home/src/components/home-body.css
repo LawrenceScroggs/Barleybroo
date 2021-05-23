@@ -16,21 +16,29 @@
     padding-top:20%;
     align-content: left; 
 }
+.bes{
+    margin-top: 50%;
+}
 .home-form{
     background-color: whitesmoke;
     padding-top: 20%; 
 }
 .img-hold{
-    height: 25%;
-    padding-top: 5%;
+    height: 20%;
+    padding-top: 10%;
     padding-left: 15%;
     padding-right: 15%;
-    padding-bottom: 50%
 }
-.email1{
+.email1,.email2, .pass{
     margin-left: 10% !important;
-    padding-right: 10%;
+    margin-right: 10%;
 }
 .Sign-up{
-    align-self: left;
+    padding-top: 10%;
+}
+.butt{
+    margin-bottom: 10%;
+}
+.signform{
+    padding-top: 10%;
 }

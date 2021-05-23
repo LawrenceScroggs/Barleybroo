@@ -34,15 +34,15 @@ export class navbar extends React.Component{
                         <RBS.Card.Body>
                           <RBS.Form>
                             <RBS.Form.Group controlId="formBasicEmail">
-                              <RBS.Form.Label>Email address</RBS.Form.Label>
+                              <RBS.Form.Label class="elab">Email address</RBS.Form.Label>
                                 <RBS.Form.Control type="email" placeholder="Enter email" />
-                                    <RBS.Form.Text className="text-muted">
+                                    <RBS.Form.Text  className="text-muted">
                                       We'll never share your email with anyone else.
                                     </RBS.Form.Text>
                             </RBS.Form.Group>
 
                             <RBS.Form.Group controlId="formBasicPassword">
-                              <RBS.Form.Label>Password</RBS.Form.Label>
+                              <RBS.Form.Label class="plab">Password</RBS.Form.Label>
                                 <RBS.Form.Control type="password" placeholder="Password" />
                             </RBS.Form.Group>
                             <RBS.Button variant="primary" type="submit">
