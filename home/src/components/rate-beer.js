@@ -22,7 +22,8 @@ export class rate_beer extends React.Component{
                 .then((data) => {
                     this.setState({
                         name: data[0].name,
-                        desc: data[0].description
+                        desc: data[0].description,
+                        image: data[0].image_url
                     })
                         console.log("Data: ",data[0]);
 
@@ -31,13 +32,15 @@ export class rate_beer extends React.Component{
             }
 
     render(){
-        const { name, desc } = this.state;
+        const { name, desc, image } = this.state;
         return(
             <RBS.Card>
-                <ul>
+                <RBS.Card.Img variant="top" src={image} style={{ height: "5%",width: "5%"}}/>
+                <RBS.Card.Body>
                     <h2>BEER: {name} </h2>
                     <h3>Entries: {desc}</h3>
-                </ul>
+
+                </RBS.Card.Body>
             </RBS.Card>
         );
     }
