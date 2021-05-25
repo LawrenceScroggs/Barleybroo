@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RBS from 'react-bootstrap';
-const url = "https://dsdlink.com/API?APICommand=LawrenceScroggs_ProductMasterData&APIToken=613d38ba76876ee69e2a73910417a060&Parameters=F:DSDLinkMasterProductID~V:702051~O:E";
-//const url2 = "https://api.punkapi.com/v2/beers/random";
+//const url = "https://dsdlink.com/API?APICommand=LawrenceScroggs_ProductMasterData&APIToken=613d38ba76876ee69e2a73910417a060&Parameters=F:DSDLinkMasterProductID~V:702051~O:E";
+const url2 = "https://api.punkapi.com/v2/beers/random";
 
 
 
@@ -17,11 +17,7 @@ export class rate_beer extends React.Component{
         };
     }
     componentDidMount() {
-        fetch(url, {
-            method: "GET",
-            status: "200",
-
-        })
+        fetch(url2)
             .then((result) => result.json())
                 .then((data) => {
                     this.setState({
@@ -31,7 +27,10 @@ export class rate_beer extends React.Component{
                     })
                         console.log("Data: ",data[0]);
 
+                }).catch(e => {
+                    console.log(e);
                 });
+
             }
 
     render(){
