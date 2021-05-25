@@ -27,6 +27,13 @@ export class home_body extends React.Component{
         })
         
     }
+    handleConfirm = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            confirm_password: event.target.value,
+        })
+        
+    }
     handleSubmit = (event) => {
         alert("A form was submitted: " + this.state);
         console.log(this.state);
@@ -97,7 +104,7 @@ export class home_body extends React.Component{
                                 <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
                                   <div class="pas2">
                                     <RBS.Form.Control class="confirm_password" type="password" placeholder="Please Re-Enter Password" 
-                                    value={this.state.value}/>
+                                    value={this.state.value} name="confirm_password" onChange={this.handleConfirm}/>
                                   </div>
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="already-user">
