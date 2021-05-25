@@ -8,27 +8,32 @@ export class home_body extends React.Component{
         super(props);
         this.state = {
             email: '',
-            pass1: '',
-            pass2: '',
+            password: '',
+            confirm_password: '',
 
         }
     }
-    handleChange = (event) => {
+    handleEmail = (event) => {
+        console.log(event.target.value)
         this.setState({
-            [event.target.email]: event.target.value,
-            [event.target.pass1]: event.target.value,
-            [event.target.pass2]: event.target.value
+            email: event.target.value,
         })
+        
+    }
+    handlePassword = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            password: event.target.value,
+        })
+        
     }
     handleSubmit = (event) => {
         alert("A form was submitted: " + this.state);
+        console.log(this.state);
         fetch('http://api.barleybroo.com/account/register', {
             method: "POST",
-            origin: "*", 
-            status: "200",
             headers: {
-                'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin' : '*'
+                'Content-Type' : "application/json",
             },
             body: JSON.stringify(this.state)
         }).then(function(response) {
@@ -73,7 +78,8 @@ export class home_body extends React.Component{
                             <RBS.Form.Group controlId="formBasicEmail">
                                 <RBS.Form.Label>Email address</RBS.Form.Label>
                                   <div class="email1">
-                                    <RBS.Form.Control class="email" type="email" placeholder="Enter email" value={this.state.value}/>
+                                    <RBS.Form.Control class="email" type="email" placeholder="Enter email" 
+                                    value={this.state.value} name="email" onChange={this.handleEmail}/>
                                   </div>
                                         <RBS.Form.Text className="text-muted">
                                             We'll never share your email with anyone else.
@@ -81,15 +87,17 @@ export class home_body extends React.Component{
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicPassword">
                                 <RBS.Form.Label>Password</RBS.Form.Label>
-                                  <div class="password2">
-                                    <RBS.Form.Control type="password" placeholder="Enter Password" value={this.state.value}/>
+                                  <div class="pass1">
+                                    <RBS.Form.Control class="password" type="password" placeholder="Enter Password" 
+                                    value={this.state.value} name="password" onChange={this.handlePassword}/>
                                   </div>
                             </RBS.Form.Group>
 
                             <RBS.Form.Group controlId="formBasicPassword-1">
                                 <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
-                                  <div class="pass">
-                                    <RBS.Form.Control type="password" placeholder="Please Re-Enter Password" value={this.state.value}/>
+                                  <div class="pas2">
+                                    <RBS.Form.Control class="confirm_password" type="password" placeholder="Please Re-Enter Password" 
+                                    value={this.state.value}/>
                                   </div>
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="already-user">
