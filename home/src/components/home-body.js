@@ -4,6 +4,43 @@ import './home-body.css';
 
 
 export class home_body extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            pass1: '',
+            pass2: '',
+
+        }
+    }
+    handleChange = (event) => {
+        this.setState({
+            [event.target.email]: event.target.value,
+            [event.target.pass1]: event.target.value,
+            [event.target.pass2]: event.target.value
+        })
+    }
+    handleSubmit = (event) => {
+        alert("A form was submitted: " + this.state);
+        fetch('http://api.barleybroo.com/account/register', {
+            method: "POST",
+            origin: "*", 
+            status: "200",
+            headers: {
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin' : '*'
+            },
+            body: JSON.stringify(this.state)
+        }).then(function(response) {
+            console.log(response);
+            return response.json();
+            
+        });
+        event.preventDefault();
+    
+    }
+
+    
     render(){
         return(
             <RBS.Container fluid>
@@ -31,28 +68,28 @@ export class home_body extends React.Component{
                     <RBS.Col className="mp-20">
                         <div class="home-butt">
                         <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
-                        <RBS.Form class="signform">
+                        <RBS.Form class="signform" onSubmit={this.handleSubmit}>
                             <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
                             <RBS.Form.Group controlId="formBasicEmail">
                                 <RBS.Form.Label>Email address</RBS.Form.Label>
                                   <div class="email1">
-                                    <RBS.Form.Control class="email1" type="email" placeholder="Enter email" />
-                                  </div>
-                            </RBS.Form.Group>
-                            <RBS.Form.Group controlId="formBasicEmail-2">
-                                <RBS.Form.Label>Verify Email address</RBS.Form.Label>
-                                  <div class="email2">
-                                    <RBS.Form.Control type="email" placeholder="Enter email" />
+                                    <RBS.Form.Control class="email" type="email" placeholder="Enter email" value={this.state.value}/>
                                   </div>
                                         <RBS.Form.Text className="text-muted">
                                             We'll never share your email with anyone else.
                                         </RBS.Form.Text>
                             </RBS.Form.Group>
-
                             <RBS.Form.Group controlId="formBasicPassword">
                                 <RBS.Form.Label>Password</RBS.Form.Label>
+                                  <div class="password2">
+                                    <RBS.Form.Control type="password" placeholder="Enter Password" value={this.state.value}/>
+                                  </div>
+                            </RBS.Form.Group>
+
+                            <RBS.Form.Group controlId="formBasicPassword-1">
+                                <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
                                   <div class="pass">
-                                    <RBS.Form.Control type="password" placeholder="Password" />
+                                    <RBS.Form.Control type="password" placeholder="Please Re-Enter Password" value={this.state.value}/>
                                   </div>
                             </RBS.Form.Group>
                             <RBS.Form.Group controlId="already-user">
@@ -70,5 +107,6 @@ export class home_body extends React.Component{
                 </RBS.Row>
             </RBS.Container>
         );
+
     }
 }
