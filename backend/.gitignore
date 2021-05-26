@@ -1,0 +1,8 @@
+Barleybroo/Web.config
+Barleybroo/Web.Debug.config
+Barleybroo/Web.Release.config
+Barleybroo/obj
+Barleybroo/Migrations
+Barleybroo/App_Data
+Barleybroo/Properties
+packages
