@@ -12,8 +12,6 @@ export class ratebeer extends React.Component {
     git;
     this.state = {
       data: [],
-      // rate: 'rating',
-      // review: 'review',
     };
     this.handleReview = this.handleReview.bind(this);
   }
@@ -105,3 +103,4 @@ export class ratebeer extends React.Component {
     );
   }
 }
+
