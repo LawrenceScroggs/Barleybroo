@@ -55,7 +55,7 @@ export class home_body extends React.Component{
     
     }
     onSubmit = () => {
-        this.props.history.push('/my-map')
+        this.props.history.push('/my-map');
     }
 
     
