@@ -9,7 +9,6 @@ export class ratebeer extends React.Component {
     this.handleReview = this.handleReview.bind(this);
     this.review = React.createRef("review");
     this.rate = React.createRef("rate");
-    git;
     this.state = {
       data: [],
     };
