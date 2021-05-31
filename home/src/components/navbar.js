@@ -3,7 +3,7 @@ import * as RBS from 'react-bootstrap';
 import './navbar.css';
 
 
-export class navbar extends React.Component{
+export class Navbar extends React.Component{
 
   constructor(props) {
     super(props);
@@ -116,3 +116,4 @@ export class navbar extends React.Component{
         );
     }
 }
+export default Navbar;

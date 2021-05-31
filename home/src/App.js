@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { navbar } from './components/navbar';
+import Navbar from './components/navbar';
 import { home_body } from './components/home-body';
 import { mymap } from './components/my-map';
 import { rate_beer } from './components/rate-beer';
@@ -9,11 +9,10 @@ import { all_comments } from './components/all-comments';
 
 export class App extends React.Component{
   render(){
-    let nav = new navbar();
   return (
-    <BrowserRouter>
-    <body className="App">
-      {nav.render()}
+    <BrowserRouter >
+    <div className="App">
+      <Navbar/>
       <Switch>
         <Route path="/" component={ home_body } exact/>
         <Route path="/home" component={ home_body } exact/>
@@ -22,7 +21,7 @@ export class App extends React.Component{
         <Route path="/all-comments" component={ all_comments } exact/>
       </Switch>
 
-    </body>
+    </div>
     </BrowserRouter>
   );
 }
