@@ -1,51 +1,107 @@
-import React from 'react';
-import * as RBS from 'react-bootstrap';
-//const url = "https://dsdlink.com/API?APICommand=LawrenceScroggs_ProductMasterData&APIToken=613d38ba76876ee69e2a73910417a060&Parameters=F:DSDLinkMasterProductID~V:702051~O:E";
-const url2 = "https://api.punkapi.com/v2/beers/random";
+import React, { useState } from "react";
+import "./rate-beer.css";
 
+const apiUrl = "https://api.punkapi.com/v2/beers";
 
+export class ratebeer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleReview = this.handleReview.bind(this);
+    this.review = React.createRef("review");
+    this.rate = React.createRef("rate");
+    git;
+    this.state = {
+      data: [],
+      // rate: 'rating',
+      // review: 'review',
+    };
+    this.handleReview = this.handleReview.bind(this);
+  }
 
-
-export class rate_beer extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            name: [],
-            desc: []
-        };
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.review !== nextProps.review) {
+      return false;
     }
-    componentDidMount() {
-        fetch(url2)
-            .then((result) => result.json())
-                .then((data) => {
-                    this.setState({
-                        name: data[0].name,
-                        desc: data[0].description,
-                        image: data[0].image_url
-                    })
-                        console.log("Data: ",data[0]);
-
-                }).catch(e => {
-                    console.log(e);
-                });
-
-            }
-
-    render(){
-        const { name, desc, image } = this.state;
-        return(
-            <RBS.Card>
-                <RBS.Card.Img variant="top" src={image} style={{ height: "5%",width: "10%"}}/>
-                    <RBS.Card.Body>
-                        <RBS.Card.Text>
-                            <h2>BEER: {name} </h2>
-                            <h3>Entries: {desc}</h3>
-                        </RBS.Card.Text>
-
-                </RBS.Card.Body>
-            </RBS.Card>
-        );
+    if (this.state.rate !== nextState.rate) {
+      return false;
     }
+    return true;
+  }
+
+  async getAPI() {
+    const { data } = this.state;
+    await fetch(apiUrl)
+      .then((res) => res.json())
+      .then((json) => this.setState({ data: json }));
+  }
+
+  handleReview(event) {
+    const inputs = event.target.getElementsByTagName("input");
+    this.setState({
+      review: inputs.review.value,
+      rate: inputs.rate.value,
+    });
+    localStorage.setItem("rev", inputs.review.value);
+    localStorage.setItem("rat", inputs.rate.value);
+    
+  }
+
+  render() {
+    this.getAPI();
+    return (
+      <div class="container">
+        <div class="Rhalf">
+          <h1>BEER</h1>
+          <h2 class="left-side">
+            {this.state.data.map((name) => (
+              <li>
+                {name.name}: {name.name}
+              </li>
+            ))}
+          </h2>
+        </div>
+        <div class="Lhalf">
+          <form onSubmit={(this.handleReview = this.handleReview.bind(this))}>
+            <h1>Write Review</h1>
+            <div class="review">
+              <label for="txt">
+                <br></br>
+              </label>
+              <input
+                type="text"
+                class="formControl"
+                id="txt"
+                height="250"
+                name="review"
+                ref={this.review}
+                required
+              ></input>
+            </div>
+            <h1>Rating</h1>
+            <div class="rating">
+              <label for="txt">
+                <br></br>
+              </label>
+              <input
+                value={this.state.rate}
+                type="text"
+                class="formControl"
+                id="rate"
+                height="250"
+                name="rate"
+                ref={this.rate}
+                required
+              ></input>
+            </div>
+            <input type="submit" value="Submit" class="btn" id="btn"></input>
+          </form>
+          <div class="results">
+            <h1>You're rating and review</h1>
+            <div>Review: {localStorage.getItem("rev")}</div>
+            <div>Rating: {localStorage.getItem("rat")}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
