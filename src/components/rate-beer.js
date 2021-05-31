@@ -40,6 +40,8 @@ export class ratebeer extends React.Component {
       review: inputs.review.value,
       rate: inputs.rate.value,
     });
+    localStorage.setItem('rev', inputs.review.value);
+    localStorage.setItem('rat', inputs.rate.value);
   }
 
   render() {
@@ -93,8 +95,8 @@ export class ratebeer extends React.Component {
           </form>
           <div class="results">
             <h1>You're rating and review</h1>
-            <div>{this.state.rate}</div>
-            <div>{this.state.review}</div>
+            <div>Review: {localStorage.getItem('rev')}</div>
+            <div>Rating: {localStorage.getItem('rat')}</div>
           </div>
         </div>
       </div>
