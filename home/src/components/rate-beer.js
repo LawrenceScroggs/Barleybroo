@@ -40,6 +40,8 @@ export class ratebeer extends React.Component {
     });
     localStorage.setItem("rev", inputs.review.value);
     localStorage.setItem("rat", inputs.rate.value);
+    localStorage.setItem("nam", inputs.name.value);
+
     
   }
 
@@ -90,12 +92,30 @@ export class ratebeer extends React.Component {
                 required
               ></input>
             </div>
+            <h1>Beer Name</h1>
+            <div class="rating">
+              <label for="txt">
+                <br></br>
+              </label>
+              <input
+                value={this.state.rate}
+                type="text"
+                class="formControl"
+                id="name"
+                height="250"
+                name="rate"
+                ref={this.rate}
+                required
+              ></input>
+            </div>
             <input type="submit" value="Submit" class="btn" id="btn"></input>
           </form>
           <div class="results">
             <h1>You're rating and review</h1>
             <div>Review: {localStorage.getItem("rev")}</div>
             <div>Rating: {localStorage.getItem("rat")}</div>
+            <div>Name: {localStorage.getItem("nam")}</div>
+
           </div>
         </div>
       </div>
