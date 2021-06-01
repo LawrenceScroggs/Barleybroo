@@ -48,11 +48,7 @@ export class Navbar extends React.Component{
             headers: {
                 'Content-Type' : "application/x-www-form-urlencoded",
             },
-<<<<<<< HEAD
-            redirect: 'follow',
-=======
             redirect: 'follow'
->>>>>>> c9bbdd0cc90ae51fa34c1b3e7ce55ddb63063064
             body: newVal
         })
         .then(response => response.json())
@@ -140,6 +136,5 @@ export class Navbar extends React.Component{
         //}
         );
       }
-    }
-
+}
 export default Navbar;
