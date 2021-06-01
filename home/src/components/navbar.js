@@ -2,39 +2,54 @@ import React from 'react';
 import * as RBS from 'react-bootstrap';
 import config from 'react-global-configuration';
 import './navbar.css';
+import { Redirect } from 'react-router-dom';
 
 
-export class navbar extends React.Component{
+export class Navbar extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = {};
+  //  this.state = {};
+    
+    this.state = {
+      username: '',
+      password: '',
+      grant_type: 'password',
+    };
+   /* 
     this.state["grant_type"] = "password";
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    */
   }
-  handleEmailChange(event) {
-    this.state['username'] = event.target.value;
+  handleEmailChange = (event) => {
+    this.setState({
+      username: event.target.value,
+    })
+    console.log(this.state.username)
   }
-  handlePasswordChange(event) {
-    this.state['password'] = event.target.value;
+
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value,
+    })
+    console.log(this.state.password)
   }
-  handleSubmit(event) {
-    this.formData = [];
-    for (var property in this.state) {
-      var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(this.state[property]);
-      this.formData.push(encodedKey + "=" + encodedValue);
-    }
-    this.formData = this.formData.join("&");
+
+  handleSubmit = (event) => {
+    let ek = encodeURIComponent(this.state.grant_type);
+    let ek1 = encodeURIComponent(this.state.username);
+    let ek2 = encodeURIComponent(this.state.password);
+    let newVal = "grant_type=" + ek + "&username=" + ek1 + "&password=" + ek2;
+    
     fetch('http://api.barleybroo.com/token', {
             method: "POST",
             headers: {
                 'Content-Type' : "application/x-www-form-urlencoded",
             },
-            body: this.formData,
-            redirect: 'follow'
+            redirect: 'follow',
+            body: newVal
         })
         .then(response => response.json())
         .then(data => {
@@ -45,6 +60,11 @@ export class navbar extends React.Component{
 
     event.preventDefault();
   }
+  /*
+  onSubmit = () => {
+    return <Redirect to="Barleybroo.com/my-map" />
+  }
+  */
   renderElement(){
     if(sessionStorage.getItem('username')===null){
       return <RBS.Accordion bg="dark">
@@ -63,7 +83,7 @@ export class navbar extends React.Component{
                                     type="email" 
                                     name="email" 
                                     placeholder="Enter email" 
-                                    value = {this.state.username} 
+                                    value = {this.state.value} 
                                     onChange={this.handleEmailChange}
                                     />
                                     <RBS.Form.Text  className="text-muted">
@@ -74,12 +94,13 @@ export class navbar extends React.Component{
                             <RBS.Form.Group controlId="formBasicPassword">
                               <RBS.Form.Label class="plab">Password</RBS.Form.Label>
                                 <RBS.Form.Control 
+                                  name="password"
                                   type="password" 
                                   placeholder="Password" 
-                                  value={this.state.password}
+                                  value={this.state.value}
                                   onChange={this.handlePasswordChange}/>
                             </RBS.Form.Group>
-                            <RBS.Button variant="primary" type="submit" value="submit">
+                            <RBS.Button variant="primary" type="submit" value="submit" onClick={this.onSubmit}>
                               Submit
                             </RBS.Button>
                           </RBS.Form>
@@ -111,5 +132,7 @@ export class navbar extends React.Component{
                   {this.renderElement()}
             </RBS.Navbar>
         );
+      }
     }
-}
+
+export default Navbar;
