@@ -36,9 +36,8 @@ export class mymap extends React.Component{
     }
     renderImg(){
         if(this.state.score < 100){
-            return <RBS.Container fluid>
-            <RBS.Card style={{width: "15rem", height: "15rem" }}>
-                <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
+            return <RBS.Card style={{width: "45%", height: "30%" }}>
+                <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg" thumbnail/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Ægir (anglicised as Aegir; Old Norse 'sea'), Hlér (Old Norse 'sea'), or Gymir (Old Norse less clearly 'sea, engulfer'), 
@@ -54,42 +53,87 @@ export class mymap extends React.Component{
                     </RBS.Card.Text>
                 </RBS.Card.Body>
             </RBS.Card>
-            </RBS.Container>
+        }
+        else if(this.state.score >= 100 && this.state.score < 200){
+            return <RBS.Card style={{width: "45%", height: "30%" }}>
+                <RBS.Card.Img variant="top" src="./images/Nephthys.jpeg" fluid/>
+                <RBS.Card.Body>
+                    <RBS.Card.Text>
+                        Nephthys or Nebet-Het in ancient Egyptian (Greek: Νέφθυς) was a goddess in ancient Egyptian religion. A member of the 
+                        Great Ennead of Heliopolis in Egyptian mythology, she was a daughter of Nut and Geb. Nephthys was typically paired 
+                        with her sister Isis in funerary rites[1] because of their role as protectors of the mummy and the god Osiris and as 
+                        the sister-wife of Set.
+
+                        She was associated with mourning, the night/darkness, service (specifically temples), childbirth, the dead, 
+                        protection, magic, health, embalming, and beer. 
+                    </RBS.Card.Text>
+                </RBS.Card.Body>
+            </RBS.Card>
         }
     }
 
     renderElement(){
-        if(sessionStorage.getItem('username') === null){
-            return( <RBS.Card.Text>YOU NEED TO BE SIGNED IN TO VIEW THIS CONTENT</RBS.Card.Text>)
+        if(sessionStorage.getItem('barleybrooKey') === null){
+            return (
+                <RBS.Card>
+                    <RBS.Card.Title>YOU NEED TO BE SIGNED IN TO VIEW THIS CONTENT</RBS.Card.Title>
+                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
+                </RBS.Card>
+            )
+
 
         }
         else{
-            return <RBS.Card.Header>WELCOME TO YOUR JOURNEY</RBS.Card.Header>
+            return (
+                <RBS.Card>
+                    <RBS.Card.Title>WELCOME TO YOUR JOURNEY</RBS.Card.Title>
+                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
+                </RBS.Card>
+        
+            )
         }
     }
     
 
     render(){
-        if(localStorage.getItem("barleybrooKey") != null){
+        if(localStorage.getItem("signedIn") !== false){
             return(
-                <RBS.Container fluid>
-                    {this.renderElement()}
-                    <RBS.Card.Img variant='top' src="./images/beer-god.jpg"></RBS.Card.Img>
-                    <div>{this.state.email}</div>
-                    <div>{this.state.score}</div>
-                    {this.renderImg()}
+                    
+                <RBS.Container>
+                    <RBS.Row fluid>
+                        <RBS.Col>
+                                {this.renderElement()}
+                        </RBS.Col>
+                    </RBS.Row>
+                    <RBS.Row fluid>
+                        <RBS.Col>
+                            <RBS.Card>
+                                <RBS.Card.Title>{this.state.email}</RBS.Card.Title>
+                                <RBS.Card.Body>
+                                    SCORE: {this.state.score}
+                                </RBS.Card.Body>
+                            </RBS.Card>
+                        </RBS.Col>
+                        <RBS.Col>
+                            {this.renderImg()}
+                        </RBS.Col>
+                    </RBS.Row>
                 </RBS.Container>
             ); 
         }
         else{
             return(
-                <RBS.Container fluid>
-                    {this.renderElement()}
-                    <div>Loading...</div>
+                <RBS.Container >
+                    <RBS.Row>
+                        <RBS.Card>
+                            {this.renderElement()}
+                            <RBS.Card.Footer>Loading.....</RBS.Card.Footer>
+                        <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
+                        </RBS.Card>
+                    </RBS.Row>
                 </RBS.Container>
             );
         }
     }
-
-
 }
+
