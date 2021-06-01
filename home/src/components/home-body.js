@@ -11,8 +11,12 @@ export class home_body extends React.Component{
             password: '',
             confirm_password: '',
 
-        }
+        };
     }
+    componentDidMount(){
+
+    }
+    componentWillMount(){}
     handleEmail = (event) => {
         console.log(event.target.value)
         this.setState({
@@ -35,7 +39,6 @@ export class home_body extends React.Component{
         
     }
     handleSubmit = (event) => {
-        alert("A form was submitted: " + this.state);
         console.log(this.state);
         fetch('http://api.barleybroo.com/account/register', {
             method: "POST",
@@ -50,6 +53,9 @@ export class home_body extends React.Component{
         });
         event.preventDefault();
     
+    }
+    onSubmit = () => {
+        this.props.history.push('/my-map');
     }
     renderElement(){
         if(sessionStorage.getItem('username')===null){
@@ -73,7 +79,6 @@ export class home_body extends React.Component{
                                 value={this.state.value} name="password" onChange={this.handlePassword}/>
                                 </div>
                         </RBS.Form.Group>
-
                         <RBS.Form.Group controlId="formBasicPassword-1">
                             <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
                                 <div class="pas2">
@@ -121,9 +126,8 @@ export class home_body extends React.Component{
                     </RBS.Col>
                     <RBS.Col className="mp-20">
                         <div class="home-butt">
-                        
                         {this.renderElement()}
-                        
+                       
                         </div> 
                     </RBS.Col>
                 </RBS.Row>

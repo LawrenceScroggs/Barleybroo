@@ -1,0 +1,75 @@
+.container {
+    margin-top: 1%;
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    vertical-align:top;
+    margin-bottom: 1%;
+    height: auto;
+}
+
+.Rhalf {
+    width: 45%;
+    float: left;
+    padding: 20px;
+    border: 5px solid black;
+    height: auto;
+}
+
+.Lhalf {
+    width: 45%;
+    float: right;
+    padding: 20px;
+    border: 5px solid black;
+    margin-left:10%;
+    height: 600px;
+}
+
+label {
+    vertical-align:top;
+    line-height: 5px;
+}
+
+input {
+    vertical-align:top;
+    line-height: 5px;
+}
+
+.review {
+    vertical-align: top;
+    line-height: 5px;
+}
+
+#btn {
+    width: 75%;
+    background-color:black;
+    color:yellow;
+    margin-top:50px;
+}
+
+#txt {
+    height: 150px;
+    width: 75%;
+    vertical-align:top;
+    line-height: 5px;
+}
+
+#rate {
+    height: 50px;
+    width: 75%;
+}
+
+.formControl {
+    vertical-align: top;
+}
+
+.results {
+    width: 110%;
+    float: right;
+    padding: 20px;
+    border: 5px solid black;
+    margin-right: -5%;
+    height: 700px;
+    margin-top:20%;
+    font-weight: bold;
+}
