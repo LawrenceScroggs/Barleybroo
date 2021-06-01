@@ -62,8 +62,6 @@ export class Navbar extends React.Component{
     return <Redirect to="Barleybroo.com/my-map" />
   }
     render(){
-      console.log(this.isSignedIn)
-      if(!this.isSignedIn){
         return(
           <RBS.Navbar bg="dark">
             <RBS.Navbar.Brand href="/" className="justify-content-left">
@@ -125,6 +123,5 @@ export class Navbar extends React.Component{
             </RBS.Navbar>
         );
       }
-    }
 }
 export default Navbar;
