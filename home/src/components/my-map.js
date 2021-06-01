@@ -36,8 +36,9 @@ export class mymap extends React.Component{
     }
     renderImg(){
         if(this.state.score < 100){
-            return <RBS.Card>
-                <RBS.Card.Img variant="top" src="./images/aeigir_god.jpeg"/>
+            return <RBS.Container fluid>
+            <RBS.Card style={{width: "15rem", height: "15rem" }}>
+                <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Ægir (anglicised as Aegir; Old Norse 'sea'), Hlér (Old Norse 'sea'), or Gymir (Old Norse less clearly 'sea, engulfer'), 
@@ -53,6 +54,7 @@ export class mymap extends React.Component{
                     </RBS.Card.Text>
                 </RBS.Card.Body>
             </RBS.Card>
+            </RBS.Container>
         }
     }
 
@@ -68,8 +70,7 @@ export class mymap extends React.Component{
     
 
     render(){
-        const { isLoaded } = this.state;
-        if(isLoaded){
+        if(localStorage.getItem("barleybrooKey") != null){
             return(
                 <RBS.Container fluid>
                     {this.renderElement()}

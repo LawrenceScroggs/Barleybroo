@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./rate-beer.css";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
@@ -26,7 +26,6 @@ export class ratebeer extends React.Component {
   }
 
   async getAPI() {
-    const { data } = this.state;
     await fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => this.setState({ data: json }));
@@ -41,8 +40,6 @@ export class ratebeer extends React.Component {
     localStorage.setItem("rev", inputs.review.value);
     localStorage.setItem("rat", inputs.rate.value);
     localStorage.setItem("nam", inputs.name.value);
-
-    
   }
 
   render() {
