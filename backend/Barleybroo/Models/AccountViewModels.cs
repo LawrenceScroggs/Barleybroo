@@ -27,11 +27,16 @@ namespace Barleybroo.Models
 
     public class UserInfoViewModel
     {
-        public string Email { get; set; }
+        public string email { get; set; }
 
-        public bool HasRegistered { get; set; }
+        //public bool HasRegistered { get; set; }
 
-        public string LoginProvider { get; set; }
+        //public string LoginProvider { get; set; }
+
+        public int score { get; set; }
+        public DateTime join_date { get; set; }
+        public string first_name {get; set;}
+        public string last_name { get; set; }
     }
 
     public class UserLoginInfoViewModel

@@ -52,6 +52,7 @@ export class Navbar extends React.Component{
 
     event.preventDefault();
   }
+
   renderElement(){
     if(sessionStorage.getItem('username')===null){
       return <RBS.Accordion bg="dark">
@@ -77,7 +78,6 @@ export class Navbar extends React.Component{
                             We'll never share your email with anyone else.
                           </RBS.Form.Text>
                   </RBS.Form.Group>
-
                   <RBS.Form.Group controlId="formBasicPassword">
                     <RBS.Form.Label class="plab">Password</RBS.Form.Label>
                       <RBS.Form.Control 
