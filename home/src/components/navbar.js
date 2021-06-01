@@ -48,7 +48,7 @@ export class Navbar extends React.Component{
             headers: {
                 'Content-Type' : "application/x-www-form-urlencoded",
             },
-            redirect: 'follow'
+            redirect: 'follow',
             body: newVal
         })
         .then(response => response.json())

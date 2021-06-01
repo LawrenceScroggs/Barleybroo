@@ -21,7 +21,7 @@ namespace Barleybroo.Controllers
 {
     [Authorize]
     [RoutePrefix("Account")]
-    public class AccountController : ApiController
+    public class AccountController : BaseApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
@@ -57,13 +57,43 @@ namespace Barleybroo.Controllers
         public UserInfoViewModel GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
+            var user = User.Identity.GetUserId();
+            var userRecord = UserManager.FindById(user);
             return new UserInfoViewModel
             {
-                Email = User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+                email = User.Identity.GetUserName(),
+                //HasRegistered = externalLogin == null,
+                //LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null,
+                first_name = userRecord.FirstName,
+                last_name = userRecord.LastName,
+                join_date = userRecord.JoinDate,
+                score = userRecord.Score
             };
+        }
+        [Route("Update")]
+        public async Task<IHttpActionResult> PutUserInfo(UpdateUserBindingModel updateUser)
+        {
+            var user = User.Identity.GetUserId();
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid user.");
+                return BadRequest(ModelState);
+            }
+            var userRecord = UserManager.FindById(user);
+            if(userRecord.Email != updateUser.email)
+            {
+                ModelState.AddModelError("", "Permission denied.");
+                return BadRequest(ModelState);
+            }
+            userRecord.FirstName = updateUser.first_name;
+            userRecord.LastName = updateUser.last_name;
+            var result = await UserManager.UpdateAsync(userRecord);
+            if (result == null)
+            {
+                ModelState.AddModelError("", "Unknown error occured when adding review.");
+                return BadRequest(ModelState);
+            }
+            return Ok();
         }
 
         // POST api/Account/Logout
