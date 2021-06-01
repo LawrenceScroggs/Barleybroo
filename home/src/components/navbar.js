@@ -48,7 +48,11 @@ export class Navbar extends React.Component{
             headers: {
                 'Content-Type' : "application/x-www-form-urlencoded",
             },
+<<<<<<< HEAD
             redirect: 'follow',
+=======
+            redirect: 'follow'
+>>>>>>> c9bbdd0cc90ae51fa34c1b3e7ce55ddb63063064
             body: newVal
         })
         .then(response => response.json())
@@ -60,6 +64,7 @@ export class Navbar extends React.Component{
 
     event.preventDefault();
   }
+
   /*
   onSubmit = () => {
     return <Redirect to="Barleybroo.com/my-map" />
@@ -68,51 +73,52 @@ export class Navbar extends React.Component{
   renderElement(){
     if(sessionStorage.getItem('username')===null){
       return <RBS.Accordion bg="dark">
-                    <RBS.Card bg="dark">
-                      <RBS.Card.Header>
-                        <RBS.Accordion.Toggle as="Button" variant="link" eventKey="0">
-                          SIGN-IN
-                        </RBS.Accordion.Toggle>
-                      </RBS.Card.Header>
-                      <RBS.Accordion.Collapse eventKey="0">
-                        <RBS.Card.Body onSubmit={this.handleSubmit}>
-                          <RBS.Form>
-                            <RBS.Form.Group controlId="formBasicEmail" >
-                              <RBS.Form.Label class="elab">Email address</RBS.Form.Label>
-                                <RBS.Form.Control 
-                                    type="email" 
-                                    name="email" 
-                                    placeholder="Enter email" 
-                                    value = {this.state.value} 
-                                    onChange={this.handleEmailChange}
-                                    />
-                                    <RBS.Form.Text  className="text-muted">
-                                      We'll never share your email with anyone else.
-                                    </RBS.Form.Text>
-                            </RBS.Form.Group>
-
-                            <RBS.Form.Group controlId="formBasicPassword">
-                              <RBS.Form.Label class="plab">Password</RBS.Form.Label>
-                                <RBS.Form.Control 
-                                  name="password"
-                                  type="password" 
-                                  placeholder="Password" 
-                                  value={this.state.value}
-                                  onChange={this.handlePasswordChange}/>
-                            </RBS.Form.Group>
-                            <RBS.Button variant="primary" type="submit" value="submit" onClick={this.onSubmit}>
-                              Submit
-                            </RBS.Button>
-                          </RBS.Form>
-                        </RBS.Card.Body>
-                      </RBS.Accordion.Collapse>
-                    </RBS.Card>
-                  </RBS.Accordion>;
+          <RBS.Card bg="dark">
+            <RBS.Card.Header>
+              <RBS.Accordion.Toggle as="Button" variant="link" eventKey="0">
+                SIGN-IN
+              </RBS.Accordion.Toggle>
+            </RBS.Card.Header>
+            <RBS.Accordion.Collapse eventKey="0">
+              <RBS.Card.Body onSubmit={this.handleSubmit}>
+                <RBS.Form>
+                  <RBS.Form.Group controlId="formBasicEmail" >
+                    <RBS.Form.Label class="elab">Email address</RBS.Form.Label>
+                      <RBS.Form.Control 
+                          type="email" 
+                          name="email" 
+                          placeholder="Enter email" 
+                          value = {this.state.value} 
+                          onChange={this.handleEmailChange}
+                          />
+                          <RBS.Form.Text  className="text-muted">
+                            We'll never share your email with anyone else.
+                          </RBS.Form.Text>
+                  </RBS.Form.Group>
+                  <RBS.Form.Group controlId="formBasicPassword">
+                    <RBS.Form.Label class="plab">Password</RBS.Form.Label>
+                      <RBS.Form.Control 
+                        name="password"
+                        type="password" 
+                        placeholder="Password" 
+                        value={this.state.value}
+                        onChange={this.handlePasswordChange}/>
+                  </RBS.Form.Group>
+                  <RBS.Button variant="primary" type="submit" value="submit" onClick={this.onSubmit}>
+                    Submit
+                  </RBS.Button>
+                </RBS.Form>
+              </RBS.Card.Body>
+            </RBS.Accordion.Collapse>
+          </RBS.Card>
+        </RBS.Accordion>;
     }
     else return <div className="home">{sessionStorage.getItem('username')}</div>;
   }
     render(){
         return(
+            //console.log(this.isSignedIn)
+            //if(!this.isSignedIn){
           <RBS.Navbar bg="dark">
             <RBS.Navbar.Brand href="/" className="justify-content-left">
               <img
@@ -131,6 +137,7 @@ export class Navbar extends React.Component{
                   </RBS.Navbar.Collapse>
                   {this.renderElement()}
             </RBS.Navbar>
+        //}
         );
       }
     }

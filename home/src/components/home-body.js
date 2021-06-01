@@ -125,8 +125,9 @@ export class home_body extends React.Component{
                       </div>
                     </RBS.Col>
                     <RBS.Col className="mp-20">
-                        <div class="home-butt">        
+                        <div class="home-butt">
                         {this.renderElement()}
+                       
                         </div> 
                     </RBS.Col>
                 </RBS.Row>
