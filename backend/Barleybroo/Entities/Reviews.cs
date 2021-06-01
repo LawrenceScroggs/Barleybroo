@@ -22,6 +22,7 @@ namespace Barleybroo.Entities
         [ForeignKey("UserId")]
         public virtual ApplicationUser ApplicationUsers { get; set; }
         public string BeerId { get; set; }
+        public int Rating { get; set; }
         [ForeignKey("BeerId")]
         public virtual BeerInfo BeerInfos { get; set; }
     }

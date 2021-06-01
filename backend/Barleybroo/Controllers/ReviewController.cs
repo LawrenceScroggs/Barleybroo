@@ -89,6 +89,7 @@ namespace Barleybroo.Controllers
                 Id = Guid.NewGuid().ToString(),
                 ReviewContent = reviewModel.content,
                 BeerId = reviewModel.beer_id,
+                Rating = reviewModel.rating,
                 UserId = user,
                 AddDate = DateTime.UtcNow,
                 LastUpdate = DateTime.UtcNow

@@ -14,6 +14,8 @@ namespace Barleybroo.Models
         public string beer_name { get; set; }
         [Required]
         public string content { get; set; }
+        [Required]
+        public int rating { get; set; }
     }
     public class UpdateReviewBindingModel
     {

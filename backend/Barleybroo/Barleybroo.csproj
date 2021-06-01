@@ -251,6 +251,14 @@
     <Compile Include="Migrations\202105231845526_update_score1.Designer.cs">
       <DependentUpon>202105231845526_update_score1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106011847475_add_rating_column.cs" />
+    <Compile Include="Migrations\202106011847475_add_rating_column.Designer.cs">
+      <DependentUpon>202106011847475_add_rating_column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011852346_add_rating_column1.cs" />
+    <Compile Include="Migrations\202106011852346_add_rating_column1.Designer.cs">
+      <DependentUpon>202106011852346_add_rating_column1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -263,7 +271,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -294,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105231845526_update_score1.resx">
       <DependentUpon>202105231845526_update_score1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011847475_add_rating_column.resx">
+      <DependentUpon>202106011847475_add_rating_column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011852346_add_rating_column1.resx">
+      <DependentUpon>202106011852346_add_rating_column1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
