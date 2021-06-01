@@ -2,26 +2,18 @@ import React from 'react';
 import * as RBS from 'react-bootstrap';
 import config from 'react-global-configuration';
 import './navbar.css';
-import { Redirect } from 'react-router-dom';
 
 
 export class Navbar extends React.Component{
 
   constructor(props) {
     super(props);
-  //  this.state = {};
     
     this.state = {
       username: '',
       password: '',
       grant_type: 'password',
     };
-   /* 
-    this.state["grant_type"] = "password";
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    */
   }
   handleEmailChange = (event) => {
     this.setState({
@@ -55,17 +47,12 @@ export class Navbar extends React.Component{
         .then(data => {
             localStorage.setItem('barleybrooKey', data.access_token);
             sessionStorage.setItem('username', this.state.username);
-            window.location.href = config.get('host');
+            window.location.href = config.get('host') + '/my-map';
         });
 
     event.preventDefault();
   }
 
-  /*
-  onSubmit = () => {
-    return <Redirect to="Barleybroo.com/my-map" />
-  }
-  */
   renderElement(){
     if(sessionStorage.getItem('username')===null){
       return <RBS.Accordion bg="dark">
@@ -113,8 +100,6 @@ export class Navbar extends React.Component{
   }
     render(){
         return(
-            //console.log(this.isSignedIn)
-            //if(!this.isSignedIn){
           <RBS.Navbar bg="dark">
             <RBS.Navbar.Brand href="/" className="justify-content-left">
               <img
