@@ -51,7 +51,49 @@ export class home_body extends React.Component{
         event.preventDefault();
     
     }
+    renderElement(){
+        if(sessionStorage.getItem('username')===null){
+            return <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
+                    <RBS.Form class="signform" onSubmit={this.handleSubmit}>
+                        <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
+                        <RBS.Form.Group controlId="formBasicEmail">
+                            <RBS.Form.Label>Email address</RBS.Form.Label>
+                                <div class="email1">
+                                <RBS.Form.Control class="email" type="email" placeholder="Enter email" 
+                                value={this.state.value} name="email" onChange={this.handleEmail}/>
+                                </div>
+                                    <RBS.Form.Text className="text-muted">
+                                        We'll never share your email with anyone else.
+                                    </RBS.Form.Text>
+                        </RBS.Form.Group>
+                        <RBS.Form.Group controlId="formBasicPassword">
+                            <RBS.Form.Label>Password</RBS.Form.Label>
+                                <div class="pass1">
+                                <RBS.Form.Control class="password" type="password" placeholder="Enter Password" 
+                                value={this.state.value} name="password" onChange={this.handlePassword}/>
+                                </div>
+                        </RBS.Form.Group>
 
+                        <RBS.Form.Group controlId="formBasicPassword-1">
+                            <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
+                                <div class="pas2">
+                                <RBS.Form.Control class="confirm_password" type="password" placeholder="Please Re-Enter Password" 
+                                value={this.state.value} name="confirm_password" onChange={this.handleConfirm}/>
+                                </div>
+                        </RBS.Form.Group>
+                        <RBS.Form.Group controlId="already-user">
+                            <RBS.Form.Text className="text-muted" href="/sign-in/">
+                                Already a user Click Here
+                            </RBS.Form.Text>
+                        </RBS.Form.Group>
+                        <RBS.Button class="butt" variant="primary" type="submit">
+                            Submit
+                        </RBS.Button>
+                    </RBS.Form>
+                    </RBS.Card>;
+        }
+        else return null;
+    }
     
     render(){
         return(
@@ -79,44 +121,9 @@ export class home_body extends React.Component{
                     </RBS.Col>
                     <RBS.Col className="mp-20">
                         <div class="home-butt">
-                        <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
-                        <RBS.Form class="signform" onSubmit={this.handleSubmit}>
-                            <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
-                            <RBS.Form.Group controlId="formBasicEmail">
-                                <RBS.Form.Label>Email address</RBS.Form.Label>
-                                  <div class="email1">
-                                    <RBS.Form.Control class="email" type="email" placeholder="Enter email" 
-                                    value={this.state.value} name="email" onChange={this.handleEmail}/>
-                                  </div>
-                                        <RBS.Form.Text className="text-muted">
-                                            We'll never share your email with anyone else.
-                                        </RBS.Form.Text>
-                            </RBS.Form.Group>
-                            <RBS.Form.Group controlId="formBasicPassword">
-                                <RBS.Form.Label>Password</RBS.Form.Label>
-                                  <div class="pass1">
-                                    <RBS.Form.Control class="password" type="password" placeholder="Enter Password" 
-                                    value={this.state.value} name="password" onChange={this.handlePassword}/>
-                                  </div>
-                            </RBS.Form.Group>
-
-                            <RBS.Form.Group controlId="formBasicPassword-1">
-                                <RBS.Form.Label>Please Re-Enter Password</RBS.Form.Label>
-                                  <div class="pas2">
-                                    <RBS.Form.Control class="confirm_password" type="password" placeholder="Please Re-Enter Password" 
-                                    value={this.state.value} name="confirm_password" onChange={this.handleConfirm}/>
-                                  </div>
-                            </RBS.Form.Group>
-                            <RBS.Form.Group controlId="already-user">
-                                <RBS.Form.Text className="text-muted" href="/sign-in/">
-                                    Already a user Click Here
-                                </RBS.Form.Text>
-                            </RBS.Form.Group>
-                            <RBS.Button class="butt" variant="primary" type="submit">
-                                Submit
-                            </RBS.Button>
-                        </RBS.Form>
-                        </RBS.Card>
+                        
+                        {this.renderElement()}
+                        
                         </div> 
                     </RBS.Col>
                 </RBS.Row>
