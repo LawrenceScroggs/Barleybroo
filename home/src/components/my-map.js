@@ -36,9 +36,10 @@ export class mymap extends React.Component{
     }
     renderImg(){
         if(this.state.score < 100){
-            return <RBS.Card style={{width: "45%", height: "30%" }}>
-                <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg" thumbnail/>
-                <RBS.Card.Body>
+            return (
+                <RBS.Card style={{width: "45%", height: "30%" }}>
+                    <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
+                    <RBS.Card.Body>
                     <RBS.Card.Text>
                         Ægir (anglicised as Aegir; Old Norse 'sea'), Hlér (Old Norse 'sea'), or Gymir (Old Norse less clearly 'sea, engulfer'), 
                         is a jötunn and a personification of the sea in Norse mythology. In the Old Norse record, Ægir hosts the gods in his
@@ -47,16 +48,17 @@ export class mymap extends React.Component{
                         Snær, personified snow. Ægir may also be the father of the beautiful jötunn Gerðr, wife of the god Freyr, or these 
                         may be two separate figures who share the same name (see below and Gymir (father of Gerðr)).
 
-                        One of Ægir's names, Hlér, is the namesake of the island Læsø (Old Norse Hléysey 'Hlér's island') and perhaps also 
+                        One of Ægir's names, Hlér, is the namesake of the island Læsø *Old Norse Hléysey 'Hlér's island'* and perhaps also 
                         Lejre in Denmark. Scholars have long analyzed Ægir's role in the Old Norse corpus, and the concept of the figure 
                         has had some influence in modern popular culture. 
                     </RBS.Card.Text>
-                </RBS.Card.Body>
-            </RBS.Card>
+                    </RBS.Card.Body>
+                </RBS.Card>
+            )
         }
         else if(this.state.score >= 100 && this.state.score < 200){
-            return <RBS.Card style={{width: "45%", height: "30%" }}>
-                <RBS.Card.Img variant="top" src="./images/Nephthys.jpeg" fluid/>
+            return (<RBS.Card style={{width: "45%", height: "30%" }}>
+                <RBS.Card.Img variant="top" src="./images/Nephthys.jpeg"/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Nephthys or Nebet-Het in ancient Egyptian (Greek: Νέφθυς) was a goddess in ancient Egyptian religion. A member of the 
@@ -69,6 +71,7 @@ export class mymap extends React.Component{
                     </RBS.Card.Text>
                 </RBS.Card.Body>
             </RBS.Card>
+            )
         }
     }
 
@@ -99,13 +102,13 @@ export class mymap extends React.Component{
         if(localStorage.getItem("signedIn") !== false){
             return(
                     
-                <RBS.Container>
+                <RBS.Container fluid>
                     <RBS.Row fluid>
                         <RBS.Col>
                                 {this.renderElement()}
                         </RBS.Col>
                     </RBS.Row>
-                    <RBS.Row fluid>
+                    <RBS.Row>
                         <RBS.Col>
                             <RBS.Card>
                                 <RBS.Card.Title>{this.state.email}</RBS.Card.Title>
@@ -123,9 +126,9 @@ export class mymap extends React.Component{
         }
         else{
             return(
-                <RBS.Container >
+                <RBS.Container>
                     <RBS.Row>
-                        <RBS.Card>
+                        <RBS.Card className="top-card">
                             {this.renderElement()}
                             <RBS.Card.Footer>Loading.....</RBS.Card.Footer>
                         <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>

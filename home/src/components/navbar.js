@@ -47,7 +47,6 @@ export class Navbar extends React.Component{
         .then(data => {
             localStorage.setItem('barleybrooKey', data.access_token);
             sessionStorage.setItem('username', this.state.username);
-            sessionStorage.setItem('signedIn', true)
             window.location.href = config.get('host') + '/my-map';
         });
 

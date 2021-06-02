@@ -104,7 +104,7 @@ export class home_body extends React.Component{
         return(
             <RBS.Container fluid>
                 <RBS.Row className="back-ground" >
-                    <RBS.Col>
+                    <RBS.Col className='mp-20'>
                       <div class="img-hold">
                         <RBS.Card class="bes" bg="dark" text="white" >
                             <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" />
