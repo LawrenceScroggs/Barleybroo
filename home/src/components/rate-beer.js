@@ -25,12 +25,37 @@ export class ratebeer extends React.Component {
     return true;
   }
 
-  async getAPI() {
+  /*async getAPI() {
     await fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => this.setState({ data: json }));
-  }
+  }*/
 
+  // fixed infinite loop
+    componentDidMount(){
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(json => {
+            this.setState({
+                data: json
+              });
+        });
+    }
+    // This needs work
+    handleSubmit = (event) => {
+        fetch("http://api.barleybroo.com/review/create",{
+          method: "POST",
+          headers: {
+              'Content-Type' : 'application/json',
+              'Authorization' : 'Bearer ' + localStorage.getItem('barleybrooKey')
+          },
+          body: JSON.stringify(this.state)
+        }).then(function(response) {
+          console.log(response);
+          return response.json();
+        });
+      event.preventDefault();
+    }
   handleReview(event) {
     const inputs = event.target.getElementsByTagName("input");
     this.setState({
@@ -43,7 +68,7 @@ export class ratebeer extends React.Component {
   }
 
   render() {
-    this.getAPI();
+//    this.getAPI();
     return (
       <div class="container">
         <div class="Rhalf">
@@ -59,19 +84,18 @@ export class ratebeer extends React.Component {
         <div class="Lhalf">
           <form onSubmit={(this.handleReview = this.handleReview.bind(this))}>
             <h1>Write Review</h1>
-            <div class="review">
+            <div class="review" id="review">
               <label for="txt">
                 <br></br>
               </label>
-              <input
-                type="text"
+              <textarea
+                type="textbox"
                 class="formControl"
                 id="txt"
-                height="250"
                 name="review"
                 ref={this.review}
                 required
-              ></input>
+              ></textarea>
             </div>
             <h1>Rating</h1>
             <div class="rating">
@@ -105,7 +129,7 @@ export class ratebeer extends React.Component {
                 required
               ></input>
             </div>
-            <input type="submit" value="Submit" class="btn" id="btn"></input>
+            <input type="submit" value="submit" onClick={this.handleSubmit} class="btn" id="btn"></input>
           </form>
           <div class="results">
             <h1>You're rating and review</h1>

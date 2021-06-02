@@ -59,7 +59,9 @@ export class home_body extends React.Component{
     }
     renderElement(){
         if(sessionStorage.getItem('username')===null){
-            return <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
+            return  <RBS.Col className="mp-20">
+                        <div class="home-butt">
+                    <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
                     <RBS.Form class="signform" onSubmit={this.handleSubmit}>
                         <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
                         <RBS.Form.Group controlId="formBasicEmail">
@@ -95,7 +97,9 @@ export class home_body extends React.Component{
                             Submit
                         </RBS.Button>
                     </RBS.Form>
-                    </RBS.Card>;
+                    </RBS.Card>
+                        </div> 
+                    </RBS.Col>
         }
         else return null;
     }
@@ -124,12 +128,8 @@ export class home_body extends React.Component{
                         </RBS.Card>
                       </div>
                     </RBS.Col>
-                    <RBS.Col className="mp-20">
-                        <div class="home-butt">
                         {this.renderElement()}
                        
-                        </div> 
-                    </RBS.Col>
                 </RBS.Row>
             </RBS.Container>
         );

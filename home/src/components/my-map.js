@@ -37,7 +37,7 @@ export class mymap extends React.Component{
     renderImg(){
         if(this.state.score < 100){
             return (
-                <RBS.Card style={{width: "45%", height: "30%" }}>
+                <RBS.Card style={{width: "45%", height: "30%" }} bg="dark" text="white">
                     <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
                     <RBS.Card.Body>
                     <RBS.Card.Text>
@@ -57,8 +57,8 @@ export class mymap extends React.Component{
             )
         }
         else if(this.state.score >= 100 && this.state.score < 200){
-            return (<RBS.Card style={{width: "45%", height: "30%" }}>
-                <RBS.Card.Img variant="top" src="./images/Nephthys.jpeg"/>
+            return (<RBS.Card style={{width: "45%", height: "30%" }} bg="dark" text="white">
+                <RBS.Card.Img variant="top" src="./images/Nephthys.jpg"/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Nephthys or Nebet-Het in ancient Egyptian (Greek: Νέφθυς) was a goddess in ancient Egyptian religion. A member of the 
@@ -99,7 +99,7 @@ export class mymap extends React.Component{
     
 
     render(){
-        if(localStorage.getItem("signedIn") !== false){
+        if(sessionStorage.getItem("signedIn") === 'true'){
             return(
                     
                 <RBS.Container fluid>
@@ -131,7 +131,6 @@ export class mymap extends React.Component{
                         <RBS.Card className="top-card">
                             {this.renderElement()}
                             <RBS.Card.Footer>Loading.....</RBS.Card.Footer>
-                        <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
                         </RBS.Card>
                     </RBS.Row>
                 </RBS.Container>
