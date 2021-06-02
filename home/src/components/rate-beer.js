@@ -11,6 +11,12 @@ export class ratebeer extends React.Component {
     this.rate = React.createRef("rate");
     this.state = {
       data: [],
+      data2: {
+        beer_id: '',
+        beer_name: '',
+        content: '',
+        rating: ''
+      }
     };
     this.handleReview = this.handleReview.bind(this);
   }
@@ -49,7 +55,7 @@ export class ratebeer extends React.Component {
               'Content-Type' : 'application/json',
               'Authorization' : 'Bearer ' + localStorage.getItem('barleybrooKey')
           },
-          body: JSON.stringify(this.state)
+          body: JSON.stringify(this.state.data2)
         }).then(function(response) {
           console.log(response);
           return response.json();
@@ -59,9 +65,14 @@ export class ratebeer extends React.Component {
   handleReview(event) {
     const inputs = event.target.getElementsByTagName("input");
     this.setState({
-      review: inputs.review.value,
-      rate: inputs.rate.value,
+      data2: {
+        content: inputs.review.value,
+        rate: inputs.rate.value,
+        beer_name: inputs.name.value,
+        beer_id: '23'
+      }
     });
+    console.log(this.state.data2);
     localStorage.setItem("rev", inputs.review.value);
     localStorage.setItem("rat", inputs.rate.value);
     localStorage.setItem("nam", inputs.name.value);
