@@ -73,7 +73,6 @@ export class ratebeer extends React.Component {
     console.log("made it here");
     console.log(event);
     const inputs = event.target.getElementsByTagName("input");
-<<<<<<< HEAD
     let obj = {
       beer_id: inputs.bid.value,
       beer_name: inputs.ber.value,
@@ -91,7 +90,6 @@ export class ratebeer extends React.Component {
     }).then(function (response) {
       console.log(response);
       //return response.json();
-=======
     console.log(inputs.review.value);
     this.setState({
       data2: {
@@ -100,8 +98,8 @@ export class ratebeer extends React.Component {
         beer_name: inputs.name.value,
         beer_id: '23'
       }
->>>>>>> fdb351f6d6d8fefe917ae3cb4efe4c5368e884bd
-    });
+    })
+  })
 
     // this.setState({
     //   data2: {
