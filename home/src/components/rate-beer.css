@@ -38,13 +38,14 @@ input {
 .review {
     vertical-align: top;
     line-height: 5px;
+    height: auto;
 }
 
 #btn {
     width: 75%;
     background-color:black;
     color:yellow;
-    margin-top:50px;
+    margin-top:25px;
 }
 
 #txt {
@@ -69,7 +70,7 @@ input {
     padding: 20px;
     border: 5px solid black;
     margin-right: -5%;
-    height: 700px;
-    margin-top:20%;
+    height: 930px;
+    margin-top:17%;
     font-weight: bold;
 }
