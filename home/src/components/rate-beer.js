@@ -1,4 +1,5 @@
 import React from "react";
+import config from 'react-global-configuration';
 import "./rate-beer.css";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
@@ -89,16 +90,9 @@ export class ratebeer extends React.Component {
       body: JSON.stringify(obj),
     }).then(function (response) {
       console.log(response);
+      window.location.href = config.get('host') + '/my-map';
       //return response.json();
     console.log(inputs.review.value);
-    this.setState({
-      data2: {
-        content: inputs.review.value,
-        rate: inputs.rate.value,
-        beer_name: inputs.name.value,
-        beer_id: '23'
-      }
-    })
   })
 
     // this.setState({
@@ -128,7 +122,7 @@ export class ratebeer extends React.Component {
           <h2 class="left-side">
             {this.state.data.map((name) => (
               <li>
-                {name.name}: {name.name}
+                {name.name}: {name.id}
               </li>
             ))}
           </h2>

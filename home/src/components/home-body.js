@@ -1,5 +1,6 @@
 import React from 'react';
 import * as RBS from 'react-bootstrap';
+import config from 'react-global-configuration';
 import './home-body.css';
 
 
@@ -48,14 +49,12 @@ export class home_body extends React.Component{
             body: JSON.stringify(this.state)
         }).then(function(response) {
             console.log(response);
+            window.location.href = config.get('host') + '/my-map';
             return response.json();
             
         });
         event.preventDefault();
     
-    }
-    onSubmit = () => {
-        this.props.history.push('/my-map');
     }
     renderElement(){
         if(sessionStorage.getItem('username')===null){
