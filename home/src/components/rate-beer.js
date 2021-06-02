@@ -64,6 +64,7 @@ export class ratebeer extends React.Component {
     }
   handleReview(event) {
     const inputs = event.target.getElementsByTagName("input");
+    console.log(inputs.review.value);
     this.setState({
       data2: {
         content: inputs.review.value,

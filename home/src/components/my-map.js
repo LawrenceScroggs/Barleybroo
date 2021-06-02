@@ -37,7 +37,7 @@ export class mymap extends React.Component{
     renderImg(){
         if(this.state.score < 100){
             return (
-                <RBS.Card style={{width: "45%", height: "30%" }} bg="dark" text="white">
+                <RBS.Card bg="dark" text="white">
                     <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
                     <RBS.Card.Body>
                     <RBS.Card.Text>
@@ -57,7 +57,7 @@ export class mymap extends React.Component{
             )
         }
         else if(this.state.score >= 100 && this.state.score < 200){
-            return (<RBS.Card style={{width: "45%", height: "30%" }} bg="dark" text="white">
+            return (<RBS.Card bg="dark" text="white">
                 <RBS.Card.Img variant="top" src="./images/Nephthys.jpg"/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
@@ -76,7 +76,7 @@ export class mymap extends React.Component{
     }
 
     renderElement(){
-        if(sessionStorage.getItem('barleybrooKey') === null){
+        if(localStorage.getItem('barleybrooKey') === null){
             return (
                 <RBS.Card>
                     <RBS.Card.Title>YOU NEED TO BE SIGNED IN TO VIEW THIS CONTENT</RBS.Card.Title>
