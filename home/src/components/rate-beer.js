@@ -1,6 +1,7 @@
 import React from "react";
-import config from 'react-global-configuration';
+import config from "react-global-configuration";
 import "./rate-beer.css";
+import Carousel from "react-elastic-carousel";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
 
@@ -13,6 +14,7 @@ export class ratebeer extends React.Component {
     this.beerName = React.createRef("ber");
     this.beerId = React.createRef("bid");
     this.state = {
+      images: [],
       data: [],
       // data2: {
       //   beer_id: "",
@@ -90,10 +92,10 @@ export class ratebeer extends React.Component {
       body: JSON.stringify(obj),
     }).then(function (response) {
       console.log(response);
-      window.location.href = config.get('host') + '/my-map';
+      window.location.href = config.get("host") + "/my-map";
       //return response.json();
-    console.log(inputs.review.value);
-  })
+      console.log(inputs.review.value);
+    });
 
     // this.setState({
     //   data2: {
@@ -112,6 +114,7 @@ export class ratebeer extends React.Component {
 
   render() {
     const form = document.getElementById("form");
+    const { images } = this.state;
     if (form) form.addEventListener("submit", this.handleReview);
 
     //    this.getAPI();
@@ -119,16 +122,24 @@ export class ratebeer extends React.Component {
       <div class="container">
         <div class="Lhalf">
           <h1>BEER</h1>
-          <h2 class="leftside">
-            {this.state.data.map((obj) => (
-              <li>
-                {obj.name} : {obj.id}
-                <br></br>
-                <img src={obj.image_url} id="beerimg" alt="alternative"></img>
-                {/* {document.getElementById("beerimg").src = objURL} */}
-              </li>
-            ))}
-          </h2>
+          <div class="leftside">
+            {this.state.data.map(
+              (obj) => this.state.images.push(obj.image_url)
+              /* <li class="elements"> */
+              /* {obj.name} : {obj.id} */
+              /* <br></br> */
+              /* <img src={obj.image_url} id="beerimg" alt="alternative"></img> */
+              /* document.getElementById("beerimg").src = objURL} */
+              /* </li> */
+            )}
+          </div>
+          <div>
+            <Carousel>
+              {images.map((item) => (
+                <img src={item}></img>
+              ))}
+            </Carousel>
+          </div>
         </div>
         <div class="Rhalf">
           <form id="form">

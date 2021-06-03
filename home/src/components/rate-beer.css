@@ -9,21 +9,21 @@
 }
 
 .Lhalf {
-    width: 45%;
-    float: left;
+    width: 100%;
     padding: 20px;
     border: 5px solid black;
     height: auto;
-    width: auto;
+    float: right;
 }
 
 .Rhalf {
-    width: 45%;
+    width: 100%;
     float: right;
     padding: 20px;
     border: 5px solid black;
     margin-left:10%;
     height: 600px;
+    text-align:center;
 }
 
 label {
@@ -78,9 +78,32 @@ input {
 
 .leftside {
     text-align: left;
+    color:yellow;
 }
 
 #beerimg {
     max-width: 50%;
     max-height: 50%;
 }
+
+ul { 
+    padding: 0px
+ }
+
+ li {
+    display: inline-block;
+    width: auto;
+    list-style: outside none none;
+    text-align: center;
+    float: center;
+ }
+
+ .elements
+ {
+     text-align:center;
+ }
+
+ #slideshow {
+     width: 20%;
+     height: 20%;
+ }
