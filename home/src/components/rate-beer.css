@@ -3,20 +3,21 @@
     border: 5px solid black;
     padding: 20px;
     display: flex;
-    vertical-align:top;
     margin-bottom: 1%;
     height: auto;
+    width: auto;
 }
 
-.Rhalf {
+.Lhalf {
     width: 45%;
     float: left;
     padding: 20px;
     border: 5px solid black;
     height: auto;
+    width: auto;
 }
 
-.Lhalf {
+.Rhalf {
     width: 45%;
     float: right;
     padding: 20px;
@@ -70,7 +71,16 @@ input {
     padding: 20px;
     border: 5px solid black;
     margin-right: -5%;
-    height: 930px;
-    margin-top:17%;
+    height: 500px;
+    margin-top:15%;
     font-weight: bold;
+}
+
+.leftside {
+    text-align: left;
+}
+
+#beerimg {
+    max-width: 50%;
+    max-height: 50%;
 }

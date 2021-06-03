@@ -117,17 +117,20 @@ export class ratebeer extends React.Component {
     //    this.getAPI();
     return (
       <div class="container">
-        <div class="Rhalf">
+        <div class="Lhalf">
           <h1>BEER</h1>
-          <h2 class="left-side">
-            {this.state.data.map((name) => (
+          <h2 class="leftside">
+            {this.state.data.map((obj) => (
               <li>
-                {name.name}: {name.id}
+                {obj.name} : {obj.id}
+                <br></br>
+                <img src={obj.image_url} id="beerimg" alt="alternative"></img>
+                {/* {document.getElementById("beerimg").src = objURL} */}
               </li>
             ))}
           </h2>
         </div>
-        <div class="Lhalf">
+        <div class="Rhalf">
           <form id="form">
             <h1>Write Review</h1>
             <div class="review" id="review">
@@ -194,7 +197,7 @@ export class ratebeer extends React.Component {
             <input type="submit" value="submit" class="btn" id="btn"></input>
           </form>
           <div class="results">
-            <h1>You're rating and review</h1>
+            <h1>You're Last Review and Rating</h1>
             <div>Review: {localStorage.getItem("rev")}</div>
             <div>Rating: {localStorage.getItem("rat")}</div>
             <div>Name: {localStorage.getItem("ber")}</div>
