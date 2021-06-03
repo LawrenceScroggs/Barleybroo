@@ -21,7 +21,7 @@ namespace Barleybroo.Controllers
 {
     [Authorize]
     [RoutePrefix("Account")]
-    public class AccountController : BaseApiController
+    public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;

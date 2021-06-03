@@ -7,6 +7,7 @@ using System;
 using Barleybroo.Entities;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Barleybroo.Models
 {
@@ -49,6 +50,13 @@ namespace Barleybroo.Models
         }
         public DbSet<BeerInfo> BeerInfo { get; set; }
         public DbSet<Reviews> Reviews { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<ApplicationDbContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
+        
     }
     
 }
