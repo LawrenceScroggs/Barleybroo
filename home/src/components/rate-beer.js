@@ -114,7 +114,7 @@ export class ratebeer extends React.Component {
 
   render() {
     const form = document.getElementById("form");
-    const { images } = this.state;
+    const { data } = this.state;
     if (form) form.addEventListener("submit", this.handleReview);
 
     //    this.getAPI();
@@ -134,9 +134,12 @@ export class ratebeer extends React.Component {
             )}
           </div>
           <div>
+            {data.map((item) => (
+              <p>{item.name}</p>
+            ))}
             <Carousel>
-              {images.map((item) => (
-                <img src={item}></img>
+              {data.map((item) => (
+                <img src={item.image_url} alt=""></img>
               ))}
             </Carousel>
           </div>
