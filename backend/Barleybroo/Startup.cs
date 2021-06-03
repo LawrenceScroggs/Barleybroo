@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Cors;
+
 using Owin;
 using Barleybroo.Models;
 using Barleybroo.Providers;
 using System.Web.Http;
 using System.Net.Http.Formatting;
 using Newtonsoft.Json.Serialization;
-using System.Web.Cors;
-using System.Threading.Tasks;
 
 [assembly: OwinStartup(typeof(Barleybroo.Startup))]
 
@@ -21,10 +19,7 @@ namespace Barleybroo
     {
         public void Configuration(IAppBuilder app)
         {
-
-            app.UseCors(CorsOptions.AllowAll);
-            //app.UseCors(corsop);
-            //ConfigureOAuthTokenGeneration(app);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             ConfigureAuth(app);
             
         }
