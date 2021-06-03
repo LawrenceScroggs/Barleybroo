@@ -1,5 +1,6 @@
 import React from 'react';
 import * as RBS from 'react-bootstrap';
+import './my-map.css'
 
 
 export class mymap extends React.Component{
@@ -34,10 +35,27 @@ export class mymap extends React.Component{
               });
         });
     }
+    renderLvl(){
+        if(this.state.score < 100){
+            return <h1>AEGIRÆgir</h1>
+        }
+        else if(this.state.score >= 100 && this.state.score < 200){
+            return <h1>NEPHTHYS</h1>
+        }
+        else if(this.state.score >= 200 && this.state.score < 300){
+            return <h1>SIDURI</h1>
+        }
+        else if(this.state.score >= 300 && this.state.score < 400){
+            return <h1>NINKASI</h1>
+        }
+        else{
+            return <h1>BEER ZUES</h1>
+        }
+    }
     renderImg(){
         if(this.state.score < 100){
             return (
-                <RBS.Card bg="dark" text="white">
+                <RBS.Card className="pt-20" bg="dark" text="white">
                     <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
                     <RBS.Card.Body>
                     <RBS.Card.Text>
@@ -57,7 +75,7 @@ export class mymap extends React.Component{
             )
         }
         else if(this.state.score >= 100 && this.state.score < 200){
-            return (<RBS.Card bg="dark" text="white">
+            return (<RBS.Card className="pt-20" bg="dark" text="white">
                 <RBS.Card.Img variant="top" src="./images/Nephthys.jpg"/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
@@ -73,6 +91,48 @@ export class mymap extends React.Component{
             </RBS.Card>
             )
         }
+        else if(this.state.score >= 200 && this.state.score < 300){
+            return (<RBS.Card className="pt-20" bg="dark" text="white" thumbnail>
+                <RBS.Card.Img variant="top" src="./images/siduri.jpeg"/>
+                <RBS.Card.Body>
+                    <RBS.Card.Text>
+                        Siduri is a character in the Epic of Gilgamesh. She is an "alewife", a wise female divinity associated with 
+                        fermentation (specifically beer[1] and wine[2]). 
+                    </RBS.Card.Text>
+                </RBS.Card.Body>
+            </RBS.Card>
+            )
+        }
+        else if(this.state.score >= 300 && this.state.score < 400){
+            return (<RBS.Card className="pt-20" bg="dark" text="white">
+                <RBS.Card.Img variant="top" src="./images/ninkasi.jpeg"/>
+                <RBS.Card.Body>
+                    <RBS.Card.Text>
+                    Ninkasi is the tutelary goddess of beer in ancient Sumerian religious mythology.  Her father was the 
+                    King of Uruk, and her mother was the high priestess of the temple of Inanna, the goddess of 
+                    procreation.[1] She is also one of the eight children created in order to heal one of the eight wounds
+                    that Enki receives. Furthermore, she is the goddess of alcohol. She was also born of "sparkling fresh 
+                    water".[2] She is the goddess made to "satisfy the desire" and "sate the heart." She would prepare the 
+                    beverage daily. 
+                    </RBS.Card.Text>
+                </RBS.Card.Body>
+            </RBS.Card>
+            )
+        }
+        else{
+            return (<RBS.Card className="mp-20" bg="dark" text="white">
+                <RBS.Card.Img variant="top" src="./images/Beer_Zues.jpg"/>
+                <RBS.Card.Body>
+                    <RBS.Card.Text>
+                        You've done it!!!!  You are the ultimate beer reviewer.  The history books will remember the
+                        names of those who have reached the peak of Mount Beer-Olympus.
+                    </RBS.Card.Text>
+                </RBS.Card.Body>
+            </RBS.Card>
+            )
+
+        }
+        
     }
 
     renderElement(){
@@ -110,15 +170,22 @@ export class mymap extends React.Component{
                     </RBS.Row>
                     <RBS.Row>
                         <RBS.Col>
-                            <RBS.Card>
+                            <RBS.Card className="user_info">
                                 <RBS.Card.Title>{this.state.email}</RBS.Card.Title>
                                 <RBS.Card.Body>
                                     SCORE: {this.state.score}
+                                    <br></br>
                                 </RBS.Card.Body>
+                                <RBS.Card.Footer>
+                                    LEVEL
+                                    {this.renderLvl()}
+                                </RBS.Card.Footer>
                             </RBS.Card>
                         </RBS.Col>
                         <RBS.Col>
+                            <div className="img-hold">
                             {this.renderImg()}
+                            </div>
                         </RBS.Col>
                     </RBS.Row>
                 </RBS.Container>
