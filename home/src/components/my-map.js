@@ -93,7 +93,7 @@ export class mymap extends React.Component{
         }
         else if(this.state.score >= 200 && this.state.score < 300){
             return (<RBS.Card className="pt-20" bg="dark" text="white" thumbnail>
-                <RBS.Card.Img variant="top" src="./images/siduri.jpeg"/>
+                <RBS.Card.Img variant="top" src="./images/siduri.jpeg" style={{height: '40rem'}}/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Siduri is a character in the Epic of Gilgamesh. She is an "alewife", a wise female divinity associated with 
