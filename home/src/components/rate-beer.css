@@ -35,7 +35,7 @@
     padding: 20px;
     border: 5px solid black;
     margin-left:10%;
-    height: 600px;
+    height: auto;
     text-align:center;
 }
 
@@ -44,9 +44,9 @@
     width: 110%;
     float: right;
     padding: 20px;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     margin-right: -5%;
-    height: 752px;
+    height: auto;
     margin-top:15%;
     font-weight: bold;
 }
