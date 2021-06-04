@@ -56,7 +56,7 @@ export class mymap extends React.Component{
         if(this.state.score < 100){
             return (
                 <RBS.Card className="pt-20" bg="dark" text="white">
-                    <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg"/>
+                    <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg" style={{height: '35rem'}}/>
                     <RBS.Card.Body>
                     <RBS.Card.Text>
                         Ægir (anglicised as Aegir; Old Norse 'sea'), Hlér (Old Norse 'sea'), or Gymir (Old Norse less clearly 'sea, engulfer'), 
@@ -76,7 +76,7 @@ export class mymap extends React.Component{
         }
         else if(this.state.score >= 100 && this.state.score < 200){
             return (<RBS.Card className="pt-20" bg="dark" text="white">
-                <RBS.Card.Img variant="top" src="./images/Nephthys.jpg"/>
+                <RBS.Card.Img variant="top" src="./images/Nephthys.jpg" style={{height: '35rem'}}/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Nephthys or Nebet-Het in ancient Egyptian (Greek: Νέφθυς) was a goddess in ancient Egyptian religion. A member of the 
@@ -93,7 +93,7 @@ export class mymap extends React.Component{
         }
         else if(this.state.score >= 200 && this.state.score < 300){
             return (<RBS.Card className="pt-20" bg="dark" text="white" thumbnail>
-                <RBS.Card.Img variant="top" src="./images/siduri.jpeg" style={{height: '40rem'}}/>
+                <RBS.Card.Img variant="top" src="./images/siduri.jpeg" style={{height: '35rem'}}/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         Siduri is a character in the Epic of Gilgamesh. She is an "alewife", a wise female divinity associated with 
@@ -105,7 +105,7 @@ export class mymap extends React.Component{
         }
         else if(this.state.score >= 300 && this.state.score < 400){
             return (<RBS.Card className="pt-20" bg="dark" text="white">
-                <RBS.Card.Img variant="top" src="./images/ninkasi.jpeg"/>
+                <RBS.Card.Img variant="top" src="./images/ninkasi2.jpeg" style={{height: '35rem'}}/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                     Ninkasi is the tutelary goddess of beer in ancient Sumerian religious mythology.  Her father was the 
@@ -121,7 +121,7 @@ export class mymap extends React.Component{
         }
         else{
             return (<RBS.Card className="mp-20" bg="dark" text="white">
-                <RBS.Card.Img variant="top" src="./images/Beer_Zues.jpg"/>
+                <RBS.Card.Img variant="top" src="./images/Beer_Zues.jpg" style={{height: '35rem'}}/>
                 <RBS.Card.Body>
                     <RBS.Card.Text>
                         You've done it!!!!  You are the ultimate beer reviewer.  The history books will remember the
