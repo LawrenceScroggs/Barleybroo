@@ -39,6 +39,18 @@
     text-align:center;
 }
 
+.results {
+    font-family: "dalek", "greek";
+    width: 110%;
+    float: right;
+    padding: 20px;
+    border: 5px solid black;
+    margin-right: -5%;
+    height: 752px;
+    margin-top:15%;
+    font-weight: bold;
+}
+
 label {
     vertical-align:top;
     line-height: 5px;
@@ -76,18 +88,6 @@ input {
 
 .formControl {
     vertical-align: top;
-}
-
-.results {
-    font-family: "dalek", "greek";
-    width: 110%;
-    float: right;
-    padding: 20px;
-    border: 5px solid black;
-    margin-right: -5%;
-    height: 500px;
-    margin-top:15%;
-    font-weight: bold;
 }
 
 .leftside {
@@ -128,4 +128,15 @@ ul {
 
 .beerHeader {
     font-size: 60px;
+}
+
+.subResults {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.aSub {
+    border: 5px solid black;
+    padding: 20px;
+    margin: 10px;
 }
