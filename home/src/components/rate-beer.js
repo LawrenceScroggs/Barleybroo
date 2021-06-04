@@ -121,7 +121,7 @@ export class ratebeer extends React.Component {
     return (
       <div class="container">
         <div class="Lhalf">
-          <h1>BEER</h1>
+          <h1 class="beerHeader">BEER : ID</h1>
           <div class="leftside">
             {this.state.data.map(
               (obj) => this.state.images.push(obj.image_url)
@@ -134,19 +134,24 @@ export class ratebeer extends React.Component {
             )}
           </div>
           <div>
-            {data.map((item) => (
-              <p>{item.name}</p>
-            ))}
+            {/* <Carousel>
+              {data.map((item) => (
+                <p>{item.name}</p>
+              ))}
+            </Carousel> */}
             <Carousel>
               {data.map((item) => (
-                <img src={item.image_url} alt=""></img>
+                <div class="beers">
+                  <p>{item.name} : {item.id}</p>
+                  <img src={item.image_url} alt=""></img>
+                </div>
               ))}
             </Carousel>
           </div>
         </div>
         <div class="Rhalf">
           <form id="form">
-            <h1>Write Review</h1>
+            <h1>WRITE REVIEW</h1>
             <div class="review" id="review">
               <label for="txt">
                 <br></br>
@@ -160,7 +165,7 @@ export class ratebeer extends React.Component {
                 required
               ></input>
             </div>
-            <h1>Rating</h1>
+            <h1>RATING</h1>
             <div class="rating">
               <label for="txt">
                 <br></br>
@@ -176,7 +181,7 @@ export class ratebeer extends React.Component {
                 required
               ></input>
             </div>
-            <h1>Beer Name</h1>
+            <h1>BEER NAME</h1>
             <div class="ber">
               <label for="txt">
                 <br></br>
@@ -192,7 +197,7 @@ export class ratebeer extends React.Component {
                 required
               ></input>
             </div>
-            <h1>Beer ID(number)</h1>
+            <h1>BEER ID(number)</h1>
             <div class="bid">
               <label for="txt">
                 <br></br>
@@ -211,10 +216,10 @@ export class ratebeer extends React.Component {
             <input type="submit" value="submit" class="btn" id="btn"></input>
           </form>
           <div class="results">
-            <h1>You're Last Review and Rating</h1>
-            <div>Review: {localStorage.getItem("rev")}</div>
-            <div>Rating: {localStorage.getItem("rat")}</div>
-            <div>Name: {localStorage.getItem("ber")}</div>
+            <h1>LAST POINTS EARNED</h1>
+            <div>REVIEW: {localStorage.getItem("rev")}</div>
+            <div>RATING: {localStorage.getItem("rat")}</div>
+            <div>NAME: {localStorage.getItem("ber")}</div>
             <div>ID: {localStorage.getItem("bid")}</div>
           </div>
         </div>

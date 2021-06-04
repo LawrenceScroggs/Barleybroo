@@ -1,3 +1,13 @@
 .main-body{
     background-color: yellow ;
 }
+
+@font-face {
+    font-family: 'dalek';
+    src: local('DALEK___'), url(./fonts/DALEK___.ttf) format('.ttf');
+}
+
+@font-face {
+    font-family: 'greek';
+    src: local('CaesarDressingRegular'), url(./fonts/CaesarDressingRegular.ttf) format('.ttf');
+}

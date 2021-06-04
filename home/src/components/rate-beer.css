@@ -1,4 +1,15 @@
+/* @font-face {
+    font-family: 'dalek';
+    src: local('dalek'), url(./src/fonts//DALEK___.ttf) format('.ttf');
+}
+
+@font-face {
+    font-family: 'greek';
+    src: local('greek'), url(./src/fonts//CaesarDressing-Regular.ttf) format('.ttf');
+} */
+
 .container {
+    font-family: "dalek", "greek";
     margin-top: 1%;
     border: 5px solid black;
     padding: 20px;
@@ -9,6 +20,7 @@
 }
 
 .Lhalf {
+    font-family: "dalek", "greek";
     width: 100%;
     padding: 20px;
     border: 5px solid black;
@@ -17,6 +29,7 @@
 }
 
 .Rhalf {
+    font-family: "dalek", "greek";
     width: 100%;
     float: right;
     padding: 20px;
@@ -66,6 +79,7 @@ input {
 }
 
 .results {
+    font-family: "dalek", "greek";
     width: 110%;
     float: right;
     padding: 20px;
@@ -107,3 +121,11 @@ ul {
      width: 20%;
      height: 20%;
  }
+
+.beers {
+    font-size: 35px;
+}
+
+.beerHeader {
+    font-size: 60px;
+}

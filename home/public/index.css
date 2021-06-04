@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'dalek';
+    src: local('dalek'), url(./src/fonts/DALEK___.ttf) format('.ttf');
+}
+
+@font-face {
+    font-family: 'greek';
+    src: local('greek'), url(./src/fonts/CaesarDressingRegular.ttf) format('.ttf');
+}

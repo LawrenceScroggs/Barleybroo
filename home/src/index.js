@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './fonts/DALEK___.ttf'; 
+import './fonts/CaesarDressingRegular.ttf';
 
 ReactDOM.render(
     <App />,
