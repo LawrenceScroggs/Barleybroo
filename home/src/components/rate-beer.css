@@ -8,167 +8,168 @@
     src: local('greek'), url(./src/fonts//CaesarDressing-Regular.ttf) format('.ttf');
 } */
 h1 {
-    background-color:gold;
-    border: solid black;
-    border-radius: 25px;
-
+  background-color: gold;
+  border: solid black;
+  border-radius: 25px;
 }
 .container {
-    position:relative;
-    overflow:hidden;
-    /* position: absolute; */
-    text-align: center;
-    /* background-image: url(../images/foam.jpg); */
-    border-radius: 25px;
-    font-family: "dalek", "greek";
-    margin-top: 1%;
-    border: 5px solid black;
-    padding: 20px;
-    display: flex;
-    margin-bottom: 1%;
-    height: auto;
-    width: auto;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  /* position: absolute; */
+  text-align: center;
+  /* background-image: url(../images/foam.jpg); */
+  border-radius: 25px;
+  font-family: "dalek", "greek";
+  margin-top: 1%;
+  border: 5px solid black;
+  padding: 20px;
+  display: flex;
+  /* margin-bottom: 1%; */
+  height: auto;
+  width: 500px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(0.1, 0.1, 0.1, 0.1);
 }
 
 .Lhalf {
-    border-radius: 25px;
-
-    /* font-family: "dalek", "greek"; */
-    width: 100%;
-    padding: 20px;
-    border: 5px solid black;
-    height: auto;
-    float: right;
+  border-radius: 25px;
+  background-color: gold;
+  /* font-family: "dalek", "greek"; */
+  width: 100%;
+  padding: 20px;
+  border: 5px solid black;
+  height: auto;
+  float: right;
 }
 
 .Rhalf {
-    border-radius: 25px;
-
-    /* font-family: "dalek", "greek"; */
-    width: 100%;
-    float: right;
-    padding: 20px;
-    border: 5px solid black;
-    margin-left:10%;
-    height: auto;
-    text-align:center;
-    /* margin-top: 50px; */
+  border-radius: 25px;
+  background-color: gold;
+  /* font-family: "dalek", "greek"; */
+  width: 100%;
+  float: right;
+  padding: 20px;
+  border: 5px solid black;
+  margin-left: 2%;
+  height: auto;
+  text-align: center;
+  /* margin-top: 50px; */
 }
 
 .results {
-    border-radius: 25px;
+  border-radius: 25px;
 
-    font-family: "dalek", "greek";
-    width: 110%;
-    float: right;
-    padding: 20px;
-    /* border: 5px solid black; */ /*this became an issue with different sizes of reviews*/
-    margin-right: -5%;
-    height: auto;
-    margin-top:15%;
-    font-weight: bold;
+  font-family: "dalek", "greek";
+  width: 110%;
+  float: right;
+  padding: 20px;
+  /* border: 5px solid black; */ /*this became an issue with different sizes of reviews*/
+  margin-right: -5%;
+  height: auto;
+  margin-top: 15%;
+  font-weight: bold;
 }
 
 label {
-    vertical-align:top;
-    line-height: 5px;
+  vertical-align: top;
+  line-height: 5px;
 }
 
 input {
-    vertical-align:top;
-    line-height: 5px;
+  vertical-align: top;
+  line-height: 5px;
 }
 
 .review {
-    vertical-align: top;
-    line-height: 5px;
-    height: auto;
+  vertical-align: top;
+  line-height: 5px;
+  height: auto;
 }
 
 #btn {
-    width: 75%;
-    background-color:black;
-    color:gold;
-    margin-top:25px;
+  width: 75%;
+  background-color: black;
+  color: gold;
+  margin-top: 25px;
 }
 
 #txt {
-    height: 150px;
-    width: 75%;
-    vertical-align:top;
-    line-height: 5px;
+  height: 150px;
+  width: 75%;
+  vertical-align: top;
+  line-height: 5px;
 }
 
 #rate {
-    height: 50px;
-    width: 75%;
+  height: 50px;
+  width: 75%;
 }
 
 .formControl {
-    vertical-align: top;
+  vertical-align: top;
+  margin-bottom: 10px;
 }
 
 .leftside {
-    text-align: left;
-    /* color:yellow; */
-    color:white;
-    visibility: hidden;
+  text-align: left;
+  /* color:yellow; */
+  color: white;
+  visibility: hidden;
 }
 
 #beerimg {
-    max-width: 50%;
-    max-height: 50%;
+  max-width: 50%;
+  max-height: 50%;
 }
 
-ul { 
-    padding: 0px
- }
+ul {
+  padding: 0px;
+}
 
- li {
-    display: inline-block;
-    width: auto;
-    list-style: outside none none;
-    text-align: center;
-    float: center;
- }
+li {
+  display: inline-block;
+  width: auto;
+  list-style: outside none none;
+  text-align: center;
+  float: center;
+}
 
- .elements
- {
-     text-align:center;
- }
+.elements {
+  text-align: center;
+}
 
- #slideshow {
-     width: 20%;
-     height: 20%;
-     /* color:white; */
- }
+#slideshow {
+  width: 20%;
+  height: 20%;
+  /* color:white; */
+}
 
 .beers {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .beerHeader {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 .subResults {
-    font-size: 30px;
-    margin-top: 15px;
+  font-size: 30px;
+  margin-top: 15px;
 }
 
 .aSub {
-    border-radius: 25px;
+  border-radius: 25px;
 
-    border: 5px solid black;
-    padding: 20px;
-    margin: 10px;
+  border: 5px solid black;
+  padding: 20px;
+  margin: 10px;
 }
 
 p:hover {
-    background-color: black;
-    color: gold;
+  background-color: black;
+  color: gold;
 }
 
 .carousel {
-    height: 900px;
+  height: 900px;
 }

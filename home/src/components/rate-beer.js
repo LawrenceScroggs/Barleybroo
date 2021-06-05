@@ -139,13 +139,37 @@ export class ratebeer extends React.Component {
                 <p>{item.name}</p>
               ))}
             </Carousel> */}
-            <Carousel>
+            <Carousel
+              // className={styles.carousel}
+              // autoPlay={true}
+              enableAutoPlay={true}
+              showArrows={false}
+              showEmptySlots={false}
+              itemPadding={[1,1,1,1]}
+              enableSwipe={true}
+              enableMouseSwipe={true}
+              stopAutoPlayOnHover={true}
+              interval={5}
+              animation={"slide"}
+              swipe={true}
+              navButtonsAlwaysVisible={false}
+              // navButtonsProps={{
+              //   style: {
+              //     backgroundColor: "#8f34eb",
+              //     opacity: 0.4,
+              //   },
+              // }}
+            >
               {data.map((item) => (
                 <div class="beers">
                   <p>
                     {item.name} : {item.id}
                   </p>
-                  <img src={item.image_url} alt="" style={{height: "auto"}}></img>
+                  <img
+                    src={item.image_url}
+                    alt=""
+                    style={{ height: "auto" }}
+                  ></img>
                 </div>
               ))}
             </Carousel>
