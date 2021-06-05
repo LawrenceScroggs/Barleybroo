@@ -39,17 +39,28 @@ export class Youtube extends React.Component {
       <div>
         <div>
           <button class="btn" id="btn" onClick={this.handleClick}>
-            Show Me Some Beer Content
+            Show
           </button>
-          {
-            this.state.result.map((link, i) => {
-              // console.log(i + " " + link)
-              let var = <div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/UhcJOnWQJXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            })
-            this.state.var;
-          }
-          <div>
-          </div>
+          {this.state.result.map((link, i) => {
+            // console.log(i + " " + link)
+            var frame = (
+              <p class="youtube">
+                <iframe
+                  key={i}
+                  width="560"
+                  height="315"
+                  src={link}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </p>
+            );
+            return frame;
+          })}
+          {this.frame}
+          <div></div>
         </div>
       </div>
     );
