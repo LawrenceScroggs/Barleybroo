@@ -8,7 +8,10 @@ import { home_body } from './components/home-body';
 import { mymap } from './components/my-map';
 import { ratebeer } from './components/rate-beer';
 import { all_comments } from './components/all-comments';
+import { finder } from './components/find-beer';
+
 config.set(configuration);
+
 export class App extends React.Component{
   render(){
   return (
@@ -19,6 +22,7 @@ export class App extends React.Component{
         <Route path="/" component={ home_body } exact/>
         <Route path="/home" component={ home_body } exact/>
         <Route path="/my-map" component={ mymap } exact/>
+        <Route path="/find-beer" component={ finder } exact/>
         <Route path="/rate-beer" component={ ratebeer } exact/>
         <Route path="/all-comments" component={ all_comments } exact/>
       </Switch>

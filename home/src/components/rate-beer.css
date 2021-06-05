@@ -9,6 +9,7 @@
 } */
 
 .container {
+    border-radius: 25px;
     font-family: "dalek", "greek";
     margin-top: 1%;
     border: 5px solid black;
@@ -20,7 +21,9 @@
 }
 
 .Lhalf {
-    font-family: "dalek", "greek";
+    border-radius: 25px;
+
+    /* font-family: "dalek", "greek"; */
     width: 100%;
     padding: 20px;
     border: 5px solid black;
@@ -29,7 +32,9 @@
 }
 
 .Rhalf {
-    font-family: "dalek", "greek";
+    border-radius: 25px;
+
+    /* font-family: "dalek", "greek"; */
     width: 100%;
     float: right;
     padding: 20px;
@@ -37,14 +42,17 @@
     margin-left:10%;
     height: auto;
     text-align:center;
+    /* margin-top: 50px; */
 }
 
 .results {
+    border-radius: 25px;
+
     font-family: "dalek", "greek";
     width: 110%;
     float: right;
     padding: 20px;
-    /* border: 5px solid black; */
+    /* border: 5px solid black; */ /*this became an issue with different sizes of reviews*/
     margin-right: -5%;
     height: auto;
     margin-top:15%;
@@ -136,6 +144,8 @@ ul {
 }
 
 .aSub {
+    border-radius: 25px;
+
     border: 5px solid black;
     padding: 20px;
     margin: 10px;

@@ -1,0 +1,53 @@
+.youtube {
+  font-family: "dalek";
+  border-radius: 25px;
+  border: 5px solid black;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  /* display:flex; */
+}
+
+button {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.btn {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
+#btn {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 auto;
+  color: yellow;
+  background-color: black;
+  border: 0.4em solid;
+  border-radius: 50%;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  width: 4em;
+  height: 4em;
+  line-height: 3em;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(0.1, 0.1, 0.1, 0.1);
+  text-align: center;
+}
+#btn:hover {
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1), inset 0 0 1em rgba(0, 0, 0.1, 0.1);
+  background-color: yellow;
+  color:black;
+}
+
+.video {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}

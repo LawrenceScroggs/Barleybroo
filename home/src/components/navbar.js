@@ -116,6 +116,7 @@ export class Navbar extends React.Component{
                     <RBS.Nav.Link href="/home" className="home">HOME</RBS.Nav.Link>
                     <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
                     <RBS.Nav.Link href="/my-map" className="my-map">MY-MAP</RBS.Nav.Link>
+                    <RBS.Nav.Link href="/find-beer" className="finder">BEER REVIEWS</RBS.Nav.Link>
                   </RBS.Navbar.Collapse>
                   {this.renderElement()}
             </RBS.Navbar>
