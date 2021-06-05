@@ -1,9 +1,13 @@
 import React from "react";
 
-const API_KEY = "AIzaSyC26HXeTSd-sW7Y72Gpdh2hvEV9yPY1FH8";
-const channelID = "UCXgGY0wkgozynnHvSEVmE3A";
-const result = 10;
-var finalURL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelID=${channelID}&part=snippet,id&order=date&maxResults=${result}`;
+const API_KEY = "AIzaSyC26HXeTSd-sW7Y72Gpdh2hvEV9yPY1FH8";//my api key that I requested during full stack term
+const channelID = "UCk81V_1MwQLTBRaUVlBysoA";//last result of channel id videos printed
+const result = 10;//amount of videos
+// const date = new Date();
+var finalURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=beerreview&type=video&key=AIzaSyC26HXeTSd-sW7Y72Gpdh2hvEV9yPY1FH8`
+//`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelID=${channelID}&part=snippet,id&order=date&maxResults=${result}`;
+//              https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${channeLid}&part=snippet,id&order=date&maxResults=20
+
 
 export class Youtube extends React.Component {
   constructor(props) {
@@ -18,7 +22,7 @@ export class Youtube extends React.Component {
     fetch(finalURL)
       .then((response) => response.json())
       .then((json) => {
-        // console.log(json);
+        console.log(json);
         // return json.movies;
         const result = json.items.map(
           (obj) => "https://www.youtube.com/embed/" + obj.id.videoId
@@ -44,9 +48,9 @@ export class Youtube extends React.Component {
           {this.state.result.map((link, i) => {
             // console.log(i + " " + link)
             var frame = (
-              <p class="youtube">
+              <p class="youtube" key={i}>
                 <iframe
-                  key={i}
+                  // key={i}
                   width="560"
                   height="315"
                   src={link}

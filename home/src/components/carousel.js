@@ -14,10 +14,10 @@ export class slideShow extends React.Component {
   }
 
   componentDidMount() {
-    // // #1. First of all you have to fetch the images.
+    // //fetch images
     // fetch('https://example.com/images-api-endpoint')
-    //   .then(response => response.json()) // If it's a JSON response, you have to parse it firstly
-    //   .then(images => this.setState({ images })) // #2. After that you have to keep the images in the component's state.
+    //   .then(response => response.json()) 
+    //   .then(images => this.setState({ images })) 
 
       fetch(apiUrl)
       .then((response) => response.json())
@@ -35,7 +35,7 @@ export class slideShow extends React.Component {
         return <div>Images are not fetched yet!</div>
     } 
 
-    // #3. Finally, render the `<Carousel />` with the state's images.
+    //render the carousel with the state's images.
     return <Carousel autoPlay infiniteLoop='true'>
       {
         images.map( obj => {
