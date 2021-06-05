@@ -145,7 +145,7 @@ export class ratebeer extends React.Component {
                   <p>
                     {item.name} : {item.id}
                   </p>
-                  <img src={item.image_url} alt=""></img>
+                  <img src={item.image_url} alt="" style={{height: "20rem"}}></img>
                 </div>
               ))}
             </Carousel>

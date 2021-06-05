@@ -105,13 +105,13 @@ export class home_body extends React.Component{
     
     render(){
         return(
-            <RBS.Container fluid>
+            <RBS.Container className="home-cntr" fluid>
                 <RBS.Row className="back-ground" >
                     <RBS.Col className='mp-20'>
                       <div class="img-hold">
-                        <RBS.Card class="bes" bg="dark" text="white" >
-                            <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" />
-                                <RBS.Card.Body >
+                        <RBS.Card class="bes" bg="dark" text="white" style={{width: "40rem"}}>
+                            <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" style={{height: "35rem", width: "40rem"}} />
+                                <RBS.Card.Body style={{width: "40rem"}}>
                                     <RBS.Card.Text>
                                         Bes (/ˈbɛs/; also spelled as Bisu), together with his feminine counterpart Beset,
                                         is an ancient Egyptian deity worshipped as a protector of households and, in 

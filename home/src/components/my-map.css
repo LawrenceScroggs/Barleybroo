@@ -4,5 +4,14 @@
 }
 .user_info{
     margin-top: 25%;
-    padding-bottom: 30%;
+}
+.map-cntr{
+    font-family: "dalek", "greek";
+}
+.user{
+    font: bold;
+    font-size: larger;
+}
+.header{
+    background-color: yellow !important;
 }

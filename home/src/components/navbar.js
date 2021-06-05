@@ -101,7 +101,7 @@ export class Navbar extends React.Component{
   }
     render(){
         return(
-          <RBS.Navbar bg="dark">
+          <RBS.Navbar bg="dark" className="nav">
             <RBS.Navbar.Brand href="/" className="justify-content-left">
               <img
                 src="images/BB2.png"

@@ -1,5 +1,5 @@
 .home,.rate,.sign,.my-map {
-  font-family: 'Roboto';
+  font-family: "dalek", "greek";
   color:white !important;
   float: right;
 }
@@ -16,4 +16,7 @@
 }
 .elab,.plab{
   color:white !important;
+}
+.nav {
+  font-family: "dalek", "greek";
 }

@@ -138,9 +138,11 @@ export class mymap extends React.Component{
     renderElement(){
         if(localStorage.getItem('barleybrooKey') === null){
             return (
-                <RBS.Card>
-                    <RBS.Card.Title>YOU NEED TO BE SIGNED IN TO VIEW THIS CONTENT</RBS.Card.Title>
-                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
+                <RBS.Card className="header">
+                    <RBS.Card.Title>
+                        YOU NEED TO BE SIGNED IN TO VIEW THIS CONTENT
+                    </RBS.Card.Title>
+                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg" style={{height: "15rem"}}></RBS.Card.Img>
                 </RBS.Card>
             )
 
@@ -148,13 +150,37 @@ export class mymap extends React.Component{
         }
         else{
             return (
-                <RBS.Card>
-                    <RBS.Card.Title>WELCOME TO YOUR JOURNEY</RBS.Card.Title>
-                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg"></RBS.Card.Img>
+                <RBS.Card className="header">
+                    <RBS.Card.Title>
+                        WELCOME TO YOUR JOURNEY
+                    </RBS.Card.Title>
+                    <RBS.Card.Img variant='bottom' src="./images/beer-god.jpg" style={{height: "15rem"}}></RBS.Card.Img>
                 </RBS.Card>
         
             )
         }
+    }
+    getProg = () => {
+
+        let prog = this.state.score;
+        if(prog > 0 && prog < 100){
+            prog = (prog / 100);
+        }
+        else if(prog >= 100 && prog < 200){
+            prog = (prog / 200);
+        }
+        else if(prog >= 200 && prog < 300){
+            prog = (prog / 300);
+        }
+        else if(prog >= 300 && prog < 400){
+            prog = (prog / 400);
+        }
+        else{
+            prog = (prog / 500);
+        }
+        prog = prog * 100;
+        return prog;
+
     }
     
 
@@ -162,7 +188,7 @@ export class mymap extends React.Component{
         if(sessionStorage.getItem("signedIn") === 'true'){
             return(
                     
-                <RBS.Container fluid>
+                <RBS.Container className="map-cntr" fluid>
                     <RBS.Row fluid>
                         <RBS.Col>
                                 {this.renderElement()}
@@ -170,13 +196,18 @@ export class mymap extends React.Component{
                     </RBS.Row>
                     <RBS.Row>
                         <RBS.Col>
-                            <RBS.Card className="user_info">
-                                <RBS.Card.Title>{this.state.email}</RBS.Card.Title>
-                                <RBS.Card.Body>
+                            <RBS.Card className="user_info" bg="dark" text="white">
+                                <RBS.Card.Title className="user">
+                                    <h1>{this.state.email}</h1>
+                                </RBS.Card.Title>
+                                <RBS.Card.Body style={{height: "10rem"}}>
                                     SCORE: {this.state.score}
                                     <br></br>
+                                <RBS.ProgressBar animated now={this.getProg()} />
+                                    <br></br>
+                                    PROGRESS TO NEXT LEVEL
                                 </RBS.Card.Body>
-                                <RBS.Card.Footer>
+                                <RBS.Card.Footer style={{height: "10rem"}}>
                                     LEVEL
                                     {this.renderLvl()}
                                 </RBS.Card.Footer>
