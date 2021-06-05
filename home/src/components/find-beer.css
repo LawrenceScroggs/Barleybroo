@@ -28,7 +28,7 @@ button {
   font-weight: bold;
   display: inline-block;
   margin: 0 auto;
-  color: yellow;
+  color: gold;
   background-color: black;
   border: 0.4em solid;
   border-radius: 50%;
@@ -43,7 +43,7 @@ button {
 }
 #btn:hover {
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.1), inset 0 0 1em rgba(0, 0, 0.1, 0.1);
-  background-color: yellow;
+  background-color: gold;
   color:black;
 }
 

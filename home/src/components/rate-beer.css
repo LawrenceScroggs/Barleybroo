@@ -7,8 +7,18 @@
     font-family: 'greek';
     src: local('greek'), url(./src/fonts//CaesarDressing-Regular.ttf) format('.ttf');
 } */
+h1 {
+    background-color:gold;
+    border: solid black;
+    border-radius: 25px;
 
+}
 .container {
+    position:relative;
+    overflow:hidden;
+    /* position: absolute; */
+    text-align: center;
+    /* background-image: url(../images/foam.jpg); */
     border-radius: 25px;
     font-family: "dalek", "greek";
     margin-top: 1%;
@@ -16,8 +26,8 @@
     padding: 20px;
     display: flex;
     margin-bottom: 1%;
-    /* height: auto;
-    width: auto; */
+    height: auto;
+    width: auto;
 }
 
 .Lhalf {
@@ -78,7 +88,7 @@ input {
 #btn {
     width: 75%;
     background-color:black;
-    color:yellow;
+    color:gold;
     margin-top:25px;
 }
 
@@ -100,7 +110,9 @@ input {
 
 .leftside {
     text-align: left;
-    color:yellow;
+    /* color:yellow; */
+    color:white;
+    visibility: hidden;
 }
 
 #beerimg {
@@ -128,6 +140,7 @@ ul {
  #slideshow {
      width: 20%;
      height: 20%;
+     /* color:white; */
  }
 
 .beers {
@@ -153,7 +166,7 @@ ul {
 
 p:hover {
     background-color: black;
-    color: yellow;
+    color: gold;
 }
 
 .carousel {
