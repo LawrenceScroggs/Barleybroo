@@ -133,7 +133,7 @@ export class ratebeer extends React.Component {
               /* </li> */
             )}
           </div>
-          <div>
+          <div clas="Lhalf">
             {/* <Carousel>
               {data.map((item) => (
                 <p>{item.name}</p>
@@ -145,7 +145,7 @@ export class ratebeer extends React.Component {
                   <p>
                     {item.name} : {item.id}
                   </p>
-                  <img src={item.image_url} alt="" style={{height: "20rem"}}></img>
+                  <img src={item.image_url} alt="" style={{height: "auto"}}></img>
                 </div>
               ))}
             </Carousel>
@@ -220,22 +220,22 @@ export class ratebeer extends React.Component {
           <div class="results">
             <h1>LAST POINTS EARNED</h1>
             <div class="subResults">
-              <div class="aSub">
+              <p class="aSub">
                 REVIEW:<br></br>
                 {localStorage.getItem("rev")}
-              </div>
-              <div class="aSub">
+              </p>
+              <p class="aSub">
                 RATING:<br></br>
                 {localStorage.getItem("rat")}
-              </div>
-              <div class="aSub">
+              </p>
+              <p class="aSub">
                 NAME:<br></br>
                 {localStorage.getItem("ber")}
-              </div>
-              <div class="aSub">
+              </p>
+              <p class="aSub">
                 ID:<br></br>
                 {localStorage.getItem("bid")}
-              </div>
+              </p>
             </div>
           </div>
         </div>

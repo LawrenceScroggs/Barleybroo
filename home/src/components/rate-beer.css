@@ -16,8 +16,8 @@
     padding: 20px;
     display: flex;
     margin-bottom: 1%;
-    height: auto;
-    width: auto;
+    /* height: auto;
+    width: auto; */
 }
 
 .Lhalf {
@@ -149,4 +149,13 @@ ul {
     border: 5px solid black;
     padding: 20px;
     margin: 10px;
+}
+
+p:hover {
+    background-color: black;
+    color: yellow;
+}
+
+.carousel {
+    height: 900px;
 }

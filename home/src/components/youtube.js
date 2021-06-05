@@ -20,9 +20,12 @@ export class Youtube extends React.Component {
       .then((json) => {
         // console.log(json);
         // return json.movies;
-        const result = json.items.map((obj) => obj.id.videoId);
+        const result = json.items.map(
+          (obj) => "https://www.youtube.com/embed/" + obj.id.videoId
+        );
         console.log(result);
         this.setState({ result });
+        console.log("this " + this.state.result);
       })
       .catch((error) => {
         console.error(error);
@@ -31,22 +34,22 @@ export class Youtube extends React.Component {
 
   render() {
     // console.log(finalURL);
-    console.log(this.state.result);
+    console.log("this state " + this.state.result);
     return (
       <div>
-        <button class="btn" id="btn" onClick={this.handleClick}>
-          Show Me Some Beer Content
-        </button>
         <div>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/UhcJOnWQJXY"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <button class="btn" id="btn" onClick={this.handleClick}>
+            Show Me Some Beer Content
+          </button>
+          {
+            this.state.result.map((link, i) => {
+              // console.log(i + " " + link)
+              let var = <div class="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/UhcJOnWQJXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            })
+            this.state.var;
+          }
+          <div>
+          </div>
         </div>
       </div>
     );
