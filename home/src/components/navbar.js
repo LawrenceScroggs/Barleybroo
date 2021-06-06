@@ -67,7 +67,7 @@ export class Navbar extends React.Component{
   }
   renderLogOut = () => {
     return (
-      <RBS.Button variant="primary" type="logout" value="logout" onClick={this.onLogout}>
+      <RBS.Button className="home-but" variant="primary" type="logout" value="logout" onClick={this.onLogout}>
         Log Out
       </RBS.Button>
     )
@@ -136,7 +136,7 @@ export class Navbar extends React.Component{
                     <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
                     <RBS.Nav.Link href="/my-map" className="my-map">MY-MAP</RBS.Nav.Link>
                     <RBS.Nav.Link href="/find-beer" className="finder">BEER REVIEWS</RBS.Nav.Link>
-                    <RBS.Nav className="nav-but">{this.renderElement()}</RBS.Nav>
+                    <RBS.Nav>{this.renderElement()}</RBS.Nav>
                   </RBS.Navbar.Collapse>
             </RBS.Navbar>
         //}
