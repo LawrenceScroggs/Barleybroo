@@ -149,7 +149,8 @@ export class ratebeer extends React.Component {
               enableSwipe={true}
               enableMouseSwipe={true}
               stopAutoPlayOnHover={true}
-              interval={5}
+              transitionMs={5}
+              // interval={5}
               animation={"slide"}
               swipe={true}
               navButtonsAlwaysVisible={false}
