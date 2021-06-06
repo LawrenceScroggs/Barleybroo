@@ -53,9 +53,28 @@ export class Navbar extends React.Component{
 
     event.preventDefault();
   }
+  onLogout = () => {
+    localStorage.setItem('barleybrooKey', '');
+    sessionStorage.setItem('username', '');
+    sessionStorage.setItem('signedIn', 'false');
+    this.setState({
+      username: '',
+      password: '',
+      grant_type: ''
+    })
+    window.location.href = config.get('host') + '/home';
+    Navbar.render();
+  }
+  renderLogOut = () => {
+    return (
+      <RBS.Button variant="primary" type="logout" value="logout" onClick={this.onLogout}>
+        Log Out
+      </RBS.Button>
+    )
+  }
 
   renderElement(){
-    if(sessionStorage.getItem('username')===null){
+    if(sessionStorage.getItem('signedIn') === 'false'){
       return <RBS.Accordion bg="dark">
           <RBS.Card bg="dark">
             <RBS.Card.Header>
@@ -97,11 +116,11 @@ export class Navbar extends React.Component{
           </RBS.Card>
         </RBS.Accordion>;
     }
-    else return <div className="home">{sessionStorage.getItem('username')}</div>;
+    else return this.renderLogOut();
   }
     render(){
         return(
-          <RBS.Navbar bg="dark" className="nav">
+          <RBS.Navbar bg="dark" className="nav" fluid>
             <RBS.Navbar.Brand href="/" className="justify-content-left">
               <img
                 src="images/BB2.png"
@@ -117,8 +136,8 @@ export class Navbar extends React.Component{
                     <RBS.Nav.Link href="/rate-beer" className="rate">RATE-BEER</RBS.Nav.Link>
                     <RBS.Nav.Link href="/my-map" className="my-map">MY-MAP</RBS.Nav.Link>
                     <RBS.Nav.Link href="/find-beer" className="finder">BEER REVIEWS</RBS.Nav.Link>
+                    <RBS.Nav className="nav-but">{this.renderElement()}</RBS.Nav>
                   </RBS.Navbar.Collapse>
-                  {this.renderElement()}
             </RBS.Navbar>
         //}
         );

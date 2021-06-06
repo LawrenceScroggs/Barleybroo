@@ -22,6 +22,7 @@
 .home-form{
     background-color: whitesmoke;
     padding-top: 20%; 
+    margin-left: 20%;
 }
 .img-hold{
     height: 20%;
@@ -35,6 +36,7 @@
 }
 .Sign-up{
     padding-top: 10%;
+    padding-left: 20%;
 }
 .butt{
     margin-bottom: 10%;

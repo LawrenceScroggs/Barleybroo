@@ -36,7 +36,7 @@ export class mymap extends React.Component{
         });
     }
     renderLvl(){
-        if(this.state.score < 100){
+        if(this.state.score < 100 || this.state.score === ''){
             return <h1>AEGIRÆgir</h1>
         }
         else if(this.state.score >= 100 && this.state.score < 200){
@@ -48,12 +48,12 @@ export class mymap extends React.Component{
         else if(this.state.score >= 300 && this.state.score < 400){
             return <h1>NINKASI</h1>
         }
-        else{
+        else if(this.state.score >= 400){
             return <h1>BEER ZUES</h1>
         }
     }
     renderImg(){
-        if(this.state.score < 100){
+        if(this.state.score < 100 || this.state.score === ''){
             return (
                 <RBS.Card className="pt-20" bg="dark" text="white">
                     <RBS.Card.Img variant="top" src="./images/aegir_god.jpeg" style={{height: '35rem'}}/>
@@ -119,7 +119,7 @@ export class mymap extends React.Component{
             </RBS.Card>
             )
         }
-        else{
+        else if(this.state.score >= 400){
             return (<RBS.Card className="mp-20" bg="dark" text="white">
                 <RBS.Card.Img variant="top" src="./images/Beer_Zues.jpg" style={{height: '35rem'}}/>
                 <RBS.Card.Body>

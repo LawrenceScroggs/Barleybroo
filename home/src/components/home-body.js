@@ -57,10 +57,10 @@ export class home_body extends React.Component{
     
     }
     renderElement(){
-        if(sessionStorage.getItem('username')===null){
+        if(sessionStorage.getItem('signedIn') === 'false'){
             return  <RBS.Col className="mp-20">
                         <div class="home-butt">
-                    <RBS.Card border="dark" style={{width: "40rem", height: "28rem" }} class="home-form">
+                    <RBS.Card border="dark" style={{width: "30rem", height: "28rem" }} class="home-form">
                     <RBS.Form class="signform" onSubmit={this.handleSubmit}>
                         <RBS.Form.Group class="Sign-up">Sign Up Here</RBS.Form.Group>
                         <RBS.Form.Group controlId="formBasicEmail">
@@ -109,9 +109,9 @@ export class home_body extends React.Component{
                 <RBS.Row className="back-ground" >
                     <RBS.Col className='mp-20'>
                       <div class="img-hold">
-                        <RBS.Card class="bes" bg="dark" text="white" style={{width: "40rem"}}>
-                            <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" style={{height: "35rem", width: "40rem"}} />
-                                <RBS.Card.Body style={{width: "40rem"}}>
+                        <RBS.Card class="bes" bg="dark" text="white" style={{width: "30rem"}}>
+                            <RBS.Card.Img variant="top" src="./images/bes_god.jpeg" style={{height: "35rem", width: "30rem"}} />
+                                <RBS.Card.Body style={{width: "30rem"}}>
                                     <RBS.Card.Text>
                                         Bes (/ˈbɛs/; also spelled as Bisu), together with his feminine counterpart Beset,
                                         is an ancient Egyptian deity worshipped as a protector of households and, in 
