@@ -142,11 +142,11 @@ export class ratebeer extends React.Component {
             <Carousel
               // className={styles.carousel}
               // autoPlay={true}
-              showEmptySlots={false}
+              showEmptySlots={true}
               initialActiveIndex={23}
               initialFirstItem={23}
               enableAutoPlay={true}
-              showArrows={false}
+              // showArrows={true}
               showEmptySlots={false}
               itemPadding={[1,1,1,1]}
               enableSwipe={true}

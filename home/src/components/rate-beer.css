@@ -177,19 +177,99 @@ p:hover {
 
 .sc.iCoGMd.xzcEF.rec.rec.pagination {
   color: white;
-  background-color:white;
+  background-color: white;
 }
 
 .sc-gKAaRy-jLgnwX-rec-rec-dot {
   color: white;
-  background-color:white;
+  background-color: white;
 }
 
-button.rec-dot{
+button.rec-dot {
   background-color: darkgoldenrod;
   box-shadow: 0 0 1px 3px gold;
 }
 
-button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+button.rec-dot:hover,
+button.rec-dot:active,
+button.rec-dot:focus {
   box-shadow: 0 0 1px 3px black;
+}
+
+/* square buttons */
+.rec.rec-arrow {
+  border-radius: 0;
+  color: darkgoldenrod;
+  background-color: gold;
+}
+/* round buttons on hover */
+.rec.rec-arrow:hover {
+  /* border-radius: 50%; */
+  border-radius: 100%;
+  color: darkgoldenrod;
+  background-color: gold;
+}
+
+.rec.rec-arrow-left {
+  border-radius: 100%;
+  color: darkgoldenrod;
+  background-color: gold;
+}
+
+.rec.rec-arrow-right {
+  border-radius: 100%;
+  color: darkgoldenrod;
+  background-color: gold;
+}
+
+
+
+/* hide disabled buttons */
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+
+/* .rec.rec-arrow { */
+/* visibility: show; */
+/* background-color:darkgoldenrod;
+  color:gold; */
+/* } */
+
+/* .rec.rec-arrow:hover {
+  visibility: show;
+  background-color:darkgoldenrod;
+  color:gold;
+} */
+
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 1px lightgrey;
+}
+
+#btn {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 auto;
+  color: darkgoldenrod;
+  background-color: black;
+  border: 0.4em solid;
+  border-radius: 50%;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  width: 4em;
+  height: 4em;
+  line-height: 3em;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(0.1, 0.1, 0.1, 0.1);
+  text-align: center;
+}
+#btn:hover {
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1), inset 0 0 1em rgba(0, 0, 0.1, 0.1);
+  background-color: darkgoldenrod;
+  color:black;
 }
